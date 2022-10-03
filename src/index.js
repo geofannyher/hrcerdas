@@ -1,25 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
+import Login from './pages/auth/login';
+import Register from './pages/auth/register';
+import Forgot from './pages/auth/forgot';
+import Dashboard from './pages/dashboard';
+import NotFound from './pages/error/404';
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-// import Layout
-import UserLayout from "./layouts/user";
-
-// import auth
-import Login from "./pages/auth/login";
-import Register from "./pages/auth/register";
-import Forgot from "./pages/auth/forgot";
-
-// import Dashboard
-import Dashboard from "./pages/dashboard";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import App from "./App";
+import Layout from "./layouting/layout";
+import Navbar from "./components/navbar";
+import Footer from "./components/footer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+      <Navbar />
       <Routes>
         {/* Auth Start */}
         <Route path="/login" element={<Login />} />
@@ -27,11 +25,16 @@ root.render(
         <Route path="/forgot-password" element={<Forgot />} />
         {/* Auth End */}
 
-        <Route path="/" element={<UserLayout />}>
-          <Route index element={<App />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-        </Route>
+        {/* error page */}
+        <Route path="*" element={<NotFound />} />
+
+        {/* layouts */}
+        <Route path="/" element={<Layout />} />
+        <Route index element={<App />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+
       </Routes>
+      <Footer />
     </BrowserRouter>
   </React.StrictMode>
 );
