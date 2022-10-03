@@ -12,6 +12,8 @@ import App from "./App";
 import Layout from "./layouts";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
+import Profile from "./pages/account";
+import Detail from "./pages/dashboard/detail";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -32,6 +34,9 @@ root.render(
         <Route path="/" element={<Layout />} />
         <Route index element={<App />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/detail" element={<Detail/>} />
+        <Route path="/user" element={<Profile />} />
+
 
       </Routes>
       <Footer />
