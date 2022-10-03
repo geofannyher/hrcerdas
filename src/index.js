@@ -9,7 +9,7 @@ import NotFound from './pages/error/404';
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
-import Layout from "./layouting/layout";
+import Layout from "./layouts";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 
