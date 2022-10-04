@@ -15,7 +15,7 @@ const Login = () => {
   const handleSubmit = async () => {
     // console.log({ email, password });
     await axios
-      .post(`${process.env.REACT_APP_BASE_URL}/pelamar/login`, {
+      .post(`${process.env.REACT_APP_BASE_URL}/hr/login`, {
         email: email,
         password: password,
       })
