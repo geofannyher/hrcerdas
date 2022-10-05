@@ -14,12 +14,13 @@ import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import Profile from "./pages/account";
 import Detail from "./pages/dashboard/detail";
+import Admin from "./layouts/Admin/admin";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
         {/* Auth Start */}
         <Route path="/login" element={<Login />} />
@@ -33,13 +34,13 @@ root.render(
         {/* layouts */}
         <Route path="/" element={<Layout />} />
         <Route index element={<App />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Admin />} />
         <Route path="/detail" element={<Detail/>} />
         <Route path="/user" element={<Profile />} />
 
 
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
   </React.StrictMode>
 );
