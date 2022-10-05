@@ -3,47 +3,45 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 
 function Register() {
-    const [email, setEmail] = useState("");
-    const [username, setUsername] = useState("");
-    const [firstName, setFirst] = useState("");
-    const [lastName, setLast] = useState("");
-    const [phone, setPhone] = useState("");
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConf] = useState("");
+    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
+    const [firstName, setFirst] = useState('');
+    const [lastName, setLast] = useState('');
+    const [phone, setPhone] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConf] = useState('');
 
 
     const navigate = useNavigate()
 
 
     const handleSubmit = async () => {
-        await axios
-            .post(`${process.env.REACT_APP_BASE_URL}/hr/register`, {
-                first_name: firstName,
-                last_name: lastName,
-                username: username,
-                email: email,
-                password: password,
-                confPassword: confirmPassword,
-                noHp: phone
-            })
-            .then(res => {
-                // if (res.status === 200) {
-                //     sessionStorage.setItem("data", JSON.stringify(res.data.data));
-                //     navigate("/dashboard");
-                //     console.log("success create");
-                // } else {
-                //     console.log("something wrong");
-                // }
-
-                navigate("/dashboard")
+        // console.log({firstName, lastName, username,email,password,confirmPassword,phone})
+        return axios.post(`${process.env.REACT_APP_BASE_URL}/hr/register`, {
+            first_name: firstName,
+            last_name: lastName,
+            username: username,
+            email: email,
+            password: password,
+            confPassword: confirmPassword,
+            noHp: phone
+        })
+            .then(response => {
+                if (response.status === 200) {
+                    // sessionStorage.setItem("data", JSON.stringify(res.data.data));
+                    navigate("/login");
+                    console.log("success create");
+                } else {
+                    console.log("something wrong");
+                }
             })
             .catch(err => {
-                // if (err.response.status === 400) {
-                //     console.log(err.response.data);
-                // } else {
-                //     console.log(err.response.data);
-                // }
-                console.log("Register Gagal",err.data)
+                if (err.response.status === 400) {
+                    console.log(err.response.data);
+                } else {
+                    console.log(err.response.data);
+                }
+                // console.log(err.data.data)
                 // handleAlert(true);
                 // setAlertMsg(err.response.data.message);
             });
