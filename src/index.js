@@ -34,7 +34,7 @@ root.render(
         {/* layouts */}
         <Route path="/" element={<Layout />} />
         <Route index element={<App />} />
-        <Route path="/dashboard" element={<Admin />} />
+        <Route path="/admin" element={<Admin />} />
         <Route path="/detail" element={<Detail/>} />
         <Route path="/user" element={<Profile />} />
 
