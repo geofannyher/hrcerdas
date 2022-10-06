@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import Login from './pages/auth/login';
-import Register from './pages/auth/register';
-import Forgot from './pages/auth/forgot';
-import Dashboard from './pages/dashboard';
-import NotFound from './pages/error/404';
+import Login from "./pages/auth/login";
+import Register from "./pages/auth/register";
+import Forgot from "./pages/auth/forgot";
+import Dashboard from "./pages/dashboard";
+import NotFound from "./pages/error/404";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
@@ -14,7 +14,7 @@ import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import Profile from "./pages/account";
 import Detail from "./pages/dashboard/detail";
-import Admin from "./layouts/Admin/admin";
+import Admin from "./pages/admin/dashboard";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -32,13 +32,12 @@ root.render(
         <Route path="*" element={<NotFound />} />
 
         {/* layouts */}
-        <Route path="/" element={<Layout />} />
-        <Route index element={<App />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/detail" element={<Detail/>} />
-        <Route path="/user" element={<Profile />} />
-
-
+        <Route path="/" element={<Layout />}>
+          <Route index element={<App />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/detail" element={<Detail />} />
+          <Route path="/user" element={<Profile />} />
+        </Route>
       </Routes>
       {/* <Footer /> */}
     </BrowserRouter>
