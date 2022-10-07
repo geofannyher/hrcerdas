@@ -30,10 +30,10 @@ root.render(
 
         {/* error page */}
         <Route path="*" element={<NotFound />} />
+        <Route index element={<App />} />
 
         {/* layouts */}
         <Route path="/" element={<Layout />}>
-          <Route index element={<App />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/detail" element={<Detail />} />
           <Route path="/user" element={<Profile />} />
