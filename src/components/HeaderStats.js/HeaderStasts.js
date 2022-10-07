@@ -20,7 +20,7 @@ export default function HeaderStats() {
                   statPercent="3.48"
                   statPercentColor="text-emerald-500"
                   statDescripiron="Since last month"
-                  statIconName="fas fa-user-plus"
+                  statIconName="fa-solid fa-briefcase"
                   statIconColor="bg-red-500"
                 />
               </div>
@@ -57,7 +57,7 @@ export default function HeaderStats() {
                   statPercentColor="text-emerald-500"
                   statDescripiron="Since last month"
                   statIconName="fas fa-briefcase"
-                  statIconColor="bg-lightBlue-500"
+                  statIconColor="bg-blue-500"
                 />
               </div>
             </div>
