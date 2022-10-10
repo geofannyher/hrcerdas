@@ -12,9 +12,9 @@ import App from "./App";
 import Layout from "./layouts";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
-import Profile from "./pages/account";
 import Detail from "./pages/dashboard/detail";
 import Admin from "./pages/admin/dashboard";
+import Profile from "./pages/admin/profile";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -36,7 +36,7 @@ root.render(
         <Route path="/" element={<Layout />}>
           <Route path="/admin" element={<Admin />} />
           <Route path="/detail" element={<Detail />} />
-          <Route path="/user" element={<Profile />} />
+          <Route path="/profile" element={ <Profile />} />
         </Route>
       </Routes>
       {/* <Footer /> */}
