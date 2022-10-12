@@ -8,7 +8,7 @@ export default function Profile() {
         <>
             {/* Breadcrumb */}
             {/* <div className="relative flex flex-col min-w-0 break-words mb-3 mt-2 w-full px-4 m-10 overflow-x-auto container"> */}
-                <nav class="flex px-5 py-3 text-gray-700 border mx-14 border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">
+                <nav class="flex px-5 py-3 text-gray-700 border mx-14 border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700 mt-6" aria-label="Breadcrumb">
                     <ol class="inline-flex items-center space-x-1 md:space-x-3">
                         <li class="inline-flex items-center">
                             <a href="/admin" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
