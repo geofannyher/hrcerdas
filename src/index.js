@@ -16,6 +16,7 @@ import Detail from "./pages/dashboard/detail";
 import Admin from "./pages/admin/dashboard";
 import Profile from "./pages/admin/profile";
 import EditProfile from "./pages/admin/editprofile";
+import Post from "./pages/admin/post";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -37,6 +38,7 @@ root.render(
         <Route path="/" element={<Layout />}>
           <Route path="/admin" element={<Admin />} />
           <Route path="/detail" element={<Detail />} />
+          <Route path="/post" element={<Post />} />
           <Route path="/admin/profile" element={ <Profile />} />
           <Route path="/admin/profile/edit" element={ <EditProfile />} />
         </Route>
