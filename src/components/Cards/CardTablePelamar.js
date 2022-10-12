@@ -1,7 +1,7 @@
 export default function CardTablePelamar() {
     return (
         <>
-            <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded p-4">
+            <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-md rounded p-4">
                 <div class="overflow-x-auto relative">
                     <div class="pb-4 bg-white dark:bg-gray-900 p-2">
                         <label for="table-search" class="sr-only">Search</label>
@@ -57,7 +57,7 @@ export default function CardTablePelamar() {
                                     <span class="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">90</span>
                                 </td>
                                 <td class="flex items-center py-4 px-6 space-x-3">
-                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
                                     <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
                                 </td>
                             </tr>
@@ -82,7 +82,7 @@ export default function CardTablePelamar() {
                                     <span class="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">90</span>
                                 </td>
                                 <td class="flex items-center py-4 px-6 space-x-3">
-                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
                                     <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
                                 </td>
                             </tr>
@@ -107,7 +107,7 @@ export default function CardTablePelamar() {
                                     <span class="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">50</span>
                                 </td>
                                 <td class="flex items-center py-4 px-6 space-x-3">
-                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
                                     <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
                                 </td>
                             </tr>
@@ -132,7 +132,7 @@ export default function CardTablePelamar() {
                                     <span class="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">70</span>
                                 </td>
                                 <td class="flex items-center py-4 px-6 space-x-3">
-                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
                                     <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
                                 </td>
                             </tr>
@@ -157,7 +157,7 @@ export default function CardTablePelamar() {
                                     <span class="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">90</span>
                                 </td>
                                 <td class="flex items-center py-4 px-6 space-x-3">
-                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
                                     <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
                                 </td>
                             </tr>
