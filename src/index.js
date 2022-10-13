@@ -19,6 +19,8 @@ import EditProfile from "./pages/admin/editprofile";
 import AddPost from "./pages/admin/addpost";
 import DetailUser from "./pages/admin/detail";
 import ListPost from "./pages/admin/listPost";
+import EditPost from "./pages/admin/editpost";
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -40,8 +42,11 @@ root.render(
         <Route path="/" element={<Layout />}>
           <Route path="/admin" element={<Admin />} />
           <Route path="/detail" element={<Detail />} />
+
           <Route path="/admin/listpost" element={<ListPost />} />
           <Route path="/admin/listpost/addPost" element={<AddPost />} />
+          <Route path="/admin/editPost" element={<EditPost />} />
+
           <Route path="/admin/detail" element={ <DetailUser />} />
           <Route path="/admin/profile" element={ <Profile />} />
           <Route path="/admin/profile/edit" element={ <EditProfile />} />
