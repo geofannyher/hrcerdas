@@ -22,7 +22,7 @@ const Login = () => {
       .then(res => {
         if (res.status === 200) {
           sessionStorage.setItem("data", JSON.stringify(res.data.data));
-          navigate("/dashboard");
+          navigate("/admin");
           console.log("success");
         } else {
           console.log("something wrong");
@@ -82,7 +82,7 @@ const Login = () => {
                     required
                     value={email}
                     onFocus={() => handleAlert(false)}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={e => setEmail(e.target.value)}
                   />
                 </div>
                 <div>
@@ -93,6 +93,7 @@ const Login = () => {
                   </label>
                   <input
                     onFocus={() => handleAlert(false)}
+                    j
                     type="password"
                     name="password"
                     id="password"
