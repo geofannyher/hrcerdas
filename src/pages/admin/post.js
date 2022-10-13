@@ -1,7 +1,7 @@
 
 // import CardDonut from "../../components/Cards/CardDonuts";
 // import CardLineChart from "../../components/Cards/CardLineChart";
-import CardFormPostTable from "../../components/Cards/CardTablePelamar";
+import CardFormPostTable from "../../components/Cards/CardFormPostTable";
 import HeaderStats from "../../components/HeaderStats.js/HeaderStasts";
 
 export default function Post() {
