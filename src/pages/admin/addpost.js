@@ -4,7 +4,7 @@
 import CardFormPost from "../../components/Cards/CardFormPost";
 import HeaderStats from "../../components/HeaderStats.js/HeaderStasts";
 
-export default function Post() {
+export default function addPost() {
     return (
         <>
         <nav class="flex px-5 py-3 text-gray-700 border mx-14 border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700 mt-6" aria-label="Breadcrumb">

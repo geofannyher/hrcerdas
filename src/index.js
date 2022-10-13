@@ -16,7 +16,7 @@ import Detail from "./pages/dashboard/detail";
 import Admin from "./pages/admin/dashboard";
 import Profile from "./pages/admin/profile";
 import EditProfile from "./pages/admin/editprofile";
-import Post from "./pages/admin/post";
+import AddPost from "./pages/admin/addpost";
 import DetailUser from "./pages/admin/detail";
 import ListPost from "./pages/admin/listPost";
 
@@ -40,7 +40,7 @@ root.render(
         <Route path="/" element={<Layout />}>
           <Route path="/admin" element={<Admin />} />
           <Route path="/detail" element={<Detail />} />
-          <Route path="/post" element={<Post />} />
+          <Route path="/addPost" element={<AddPost />} />
           <Route path="/listPost" element={<ListPost />} />
           <Route path="/admin/detail" element={ <DetailUser />} />
           <Route path="/admin/profile" element={ <Profile />} />
