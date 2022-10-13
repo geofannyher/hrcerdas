@@ -1,8 +1,8 @@
-export default function CardFormPostTable() {
+export default function CardFormPost() {
     return (
         <>
-        <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-md rounded p-4">
-            <div class="overflow-x-auto relative">
+            <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-md rounded p-4">
+                <div class="overflow-x-auto relative">
                 <form>
                     <div class="mb-6">
                         <label for="role" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Posisi Yang Ditawarkan</label>
@@ -57,7 +57,6 @@ export default function CardFormPostTable() {
                 </form>
                 </div>
             </div>
-
         </>
     )
 }
