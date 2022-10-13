@@ -3,6 +3,7 @@ export default function CardTablePelamar() {
         <>
             <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-md rounded p-4">
                 <div class="overflow-x-auto relative">
+
                     <div class="pb-4 bg-white dark:bg-gray-900 p-2">
                         <label for="table-search" class="sr-only">Search</label>
                         <div class="relative mt-1">
