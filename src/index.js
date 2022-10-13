@@ -42,9 +42,11 @@ root.render(
         <Route path="/" element={<Layout />}>
           <Route path="/admin" element={<Admin />} />
           <Route path="/detail" element={<Detail />} />
-          <Route path="/addPost" element={<AddPost />} />
-          <Route path="/listPost" element={<ListPost />} />
-          <Route path="/editPost" element={<EditPost />} />
+
+          <Route path="/admin/listpost" element={<ListPost />} />
+          <Route path="/admin/listpost/addPost" element={<AddPost />} />
+          <Route path="/admin/editPost" element={<EditPost />} />
+
           <Route path="/admin/detail" element={ <DetailUser />} />
           <Route path="/admin/profile" element={ <Profile />} />
           <Route path="/admin/profile/edit" element={ <EditProfile />} />
