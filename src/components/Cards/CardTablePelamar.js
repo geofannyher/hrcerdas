@@ -58,7 +58,7 @@ export default function CardTablePelamar() {
                                     <span class="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">90</span>
                                 </td>
                                 <td class="flex items-center py-4 px-6 space-x-3">
-                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                                    <a href="admin/detail" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
                                     <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
                                 </td>
                             </tr>

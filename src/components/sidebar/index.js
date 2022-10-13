@@ -16,7 +16,7 @@ const Sidebar = () => {
           <ul class="space-y-2">
             <li>
               <a
-                href="#"
+                href="/admin"
                 class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
               >
                 <svg
@@ -34,7 +34,7 @@ const Sidebar = () => {
             </li>
             <li>
               <a
-                href="#"
+                href="/admin/listpost"
                 class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
               >
                 <svg
@@ -50,7 +50,7 @@ const Sidebar = () => {
                     clip-rule="evenodd"
                   ></path>
                 </svg>
-                <span class="flex-1 ml-3 whitespace-nowrap">Users</span>
+                <span class="flex-1 ml-3 whitespace-nowrap">Post Job</span>
               </a>
             </li>
           </ul>
