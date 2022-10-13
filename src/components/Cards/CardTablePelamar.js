@@ -39,7 +39,7 @@ export default function CardTablePelamar() {
                         <tbody>
                             <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                                 <th scope="row" class="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap dark:text-white">
-                                    <img class="w-10 h-10 rounded-full" src="https://cssh.northeastern.edu/wp-content/uploads/2020/01/PHIL-Nathanson-web.jpg" alt="eka" />
+                                    <img class="w-10 h-10 rounded-full" src="https://cssh.northeastern.edu/wp-content/uploads/2020/01/PHIL-Nathanson-web.jpg" alt="hanip" />
                                     <div class="pl-3">
                                         <div class="text-base font-semibold">Neil Sims</div>
                                         <div class="font-normal text-gray-500">neil.sims@flowbite.com</div>
@@ -64,7 +64,7 @@ export default function CardTablePelamar() {
                             </tr>
                             <tr class="bg-gray-50 border-b dark:bg-gray-800 dark:border-gray-700">
                                 <th scope="row" class="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap dark:text-white">
-                                    <img class="w-10 h-10 rounded-full" src="https://cssh.northeastern.edu/wp-content/uploads/2020/01/PHIL-Nathanson-web.jpg" alt="eka" />
+                                    <img class="w-10 h-10 rounded-full" src="https://cssh.northeastern.edu/wp-content/uploads/2020/01/PHIL-Nathanson-web.jpg" alt="hanip" />
                                     <div class="pl-3">
                                         <div class="text-base font-semibold">Neil Sims</div>
                                         <div class="font-normal text-gray-500">neil.sims@flowbite.com</div>
@@ -89,7 +89,7 @@ export default function CardTablePelamar() {
                             </tr>
                             <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                                 <th scope="row" class="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap dark:text-white">
-                                    <img class="w-10 h-10 rounded-full" src="https://cssh.northeastern.edu/wp-content/uploads/2020/01/PHIL-Nathanson-web.jpg" alt="eka" />
+                                    <img class="w-10 h-10 rounded-full" src="https://cssh.northeastern.edu/wp-content/uploads/2020/01/PHIL-Nathanson-web.jpg" alt="hanip" />
                                     <div class="pl-3">
                                         <div class="text-base font-semibold">Neil Sims</div>
                                         <div class="font-normal text-gray-500">neil.sims@flowbite.com</div>
@@ -114,7 +114,7 @@ export default function CardTablePelamar() {
                             </tr>
                             <tr class="bg-gray-50 border-b dark:bg-gray-800 dark:border-gray-700">
                                 <th scope="row" class="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap dark:text-white">
-                                    <img class="w-10 h-10 rounded-full" src="https://cssh.northeastern.edu/wp-content/uploads/2020/01/PHIL-Nathanson-web.jpg" alt="eka" />
+                                    <img class="w-10 h-10 rounded-full" src="https://cssh.northeastern.edu/wp-content/uploads/2020/01/PHIL-Nathanson-web.jpg" alt="hanip" />
                                     <div class="pl-3">
                                         <div class="text-base font-semibold">Neil Sims</div>
                                         <div class="font-normal text-gray-500">neil.sims@flowbite.com</div>
@@ -139,7 +139,7 @@ export default function CardTablePelamar() {
                             </tr>
                             <tr>
                                 <th scope="row" class="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap dark:text-white">
-                                    <img class="w-10 h-10 rounded-full" src="https://cssh.northeastern.edu/wp-content/uploads/2020/01/PHIL-Nathanson-web.jpg" alt="eka" />
+                                    <img class="w-10 h-10 rounded-full" src="https://cssh.northeastern.edu/wp-content/uploads/2020/01/PHIL-Nathanson-web.jpg" alt="hanip" />
                                     <div class="pl-3">
                                         <div class="text-base font-semibold">Neil Sims</div>
                                         <div class="font-normal text-gray-500">neil.sims@flowbite.com</div>

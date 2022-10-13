@@ -1,6 +1,5 @@
-import PhotoProfile from "../../components/Cards/CardPhotosProfile";
 import Detail from "../../components/Cards/User/CardDetailUser";
-import Rating from "../../components/Cards/User/CardRating";
+import PhotoProfileUser from "../../components/Cards/User/CardPhotosProfile";
 // import CardDetailUser from "../../components/Cards/User/CardDetailUser";
 
 export default function DetailUser() {
@@ -33,7 +32,7 @@ export default function DetailUser() {
             {/* </div> */}
             <div className="flex flex-wrap mx-10">
                 <div className="w-full px-4  xl:w-3/12">
-                    <PhotoProfile />
+                    <PhotoProfileUser />
                 </div>
                 <div className="w-full px-4 xl:w-9/12">
                     <Detail />
