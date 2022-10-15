@@ -2,6 +2,46 @@ const App = () => {
   return (
       <div className="container-Hero">
           <section className="bg-white dark:bg-gray-900">
+
+            <section className="header relative pt-16 items-center flex h-screen max-h-860-px">
+                <div className="container mx-auto items-center flex flex-wrap">
+                    <div className="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
+                        <div className="pt-32 sm:pt-0">
+                            <h2 className="font-semibold text-4xl text-blueGray-600">Notus React - A beautiful extension for Tailwind CSS</h2>
+                            <p className="mt-4 text-lg leading-relaxed text-blueGray-500">Notus React is Free and Open Source. It does not change any of the CSS from</p>
+                            <div className="mt-12">
+                            <a
+                                href="#"
+                                target="_blank"
+                                className="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-blue-900 active:bg-lightBlue-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
+                            > Get started </a>
+                            {/* <a
+                                href="#"
+                                className="github-star ml-1 text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-blue-900 active:bg-blueGray-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
+                                target="#"
+                            > Github Star
+                            </a> */}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <img
+                    className="absolute top-0 b-auto right-0 pt-16 sm:w-6/12 -mt-48 sm:mt-0 w-10/12 max-h-860px"
+                    url="https://mdbootstrap.com/img/new/standard/city/041.jpg"
+                    alt="..."
+                />
+            </section>
+
+            <section className="mt-48 md:mt-40 pb-40 relative bg-blueGray-100">
+                <div className="-mt-20 top-0 bottom-auto left-0 right-0 w-full absolute h-20" style={{ transform: "translateZ(0)" }}>
+                    <svg className="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+                        <polygon className="text-blueGray-100 fill-current" points="2560 0 2560 100 0 100"></polygon>
+                    </svg>
+                </div>
+                
+            </section>
+
               {/* <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
                   <a href="#" className="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" role="alert">
                       <span className="text-xs bg-primary-600 rounded-full text-white px-4 py-1.5 mr-3">New</span> <span className="text-sm font-medium">Flowbite is out! See whats new</span>
