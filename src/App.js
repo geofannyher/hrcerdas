@@ -2,8 +2,8 @@
 const App = () => {
 
   return (
-      <div className="container-Hero">
-          <section className="bg-white dark:bg-gray-900">
+        <div className="container-Hero">
+          <section className="bg-white relative dark:bg-gray-900 items-center flex h-screen max-h-860-px">
 
             <section className="header relative pt-16 items-center flex h-screen max-h-860-px">
                 <div className="container mx-auto items-center flex flex-wrap">
@@ -17,12 +17,6 @@ const App = () => {
                                 target="_blank"
                                 className="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-blue-900 active:bg-lightBlue-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
                             > Get started </a>
-                            {/* <a
-                                href="#"
-                                className="github-star ml-1 text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-blue-900 active:bg-blueGray-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
-                                target="#"
-                            > Github Star
-                            </a> */}
                             </div>
                         </div>
                     </div>
@@ -41,7 +35,52 @@ const App = () => {
                         <polygon className="text-blueGray-100 fill-current" points="2560 0 2560 100 0 100"></polygon>
                     </svg>
                 </div>
-                
+
+                <div className="container mx-auto">
+                    <div className="flex flex-wrap items-center">
+                        <div className="w-10/12 md:w-6/12 lg:w-4/12 px-12 md:px-4 mr-auto ml-auto -mt-32">
+                            <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-lightBlue-500">
+                            <img
+                                alt="..."
+                                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80"
+                                className="w-full align-middle rounded-t-lg"
+                            />
+                            <blockquote className="relative p-8 mb-4">
+                            <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95" className="absolute left-0 w-full block h-95-px -top-94-px">
+                                <polygon points="-30,95 583,95 583,65" className="text-lightBlue-500 fill-current"></polygon>
+                            </svg>
+                            <h4 className="text-xl font-bold text-white">Great for your awesome project</h4>
+                            <p className="text-md font-light mt-2 text-white">Putting together a page has never been easier than matching together pre-made components. From landing pages presentation to login areas, you can easily customise and built your pages.</p>
+                            </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="w-full md:w-6/12 px-4">
+                    <div className="flex flex-wrap">
+                        <div className="w-full md:w-6/12 px-4">
+                            <div className="relative flex flex-col mt-4">
+                                <div className="px-4 py-5 flex-auto">
+                                    <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white">
+                                        <i className="fas fa-sitemap"></i>
+                                    </div>
+                                    <h6 className="text-xl mb-1 font-semibold">CSS Components</h6>
+                                    <p className="mb-4 text-blueGray-500">Notus React comes with a huge number of Fully Coded CSS components.</p>
+                                </div>
+                            </div>
+                            <div className="relative flex flex-col mt-4">
+                                <div className="px-4 py-5 flex-auto">
+                                    <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white">
+                                        <i className="fas fa-sitemap"></i>
+                                    </div>
+                                    <h6 className="text-xl mb-1 font-semibold">CSS Components</h6>
+                                    <p className="mb-4 text-blueGray-500">Notus React comes with a huge number of Fully Coded CSS components.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
               {/* <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
@@ -171,7 +210,6 @@ const App = () => {
               </div> */}
 
           </section>
-
 
         </div>
     )
