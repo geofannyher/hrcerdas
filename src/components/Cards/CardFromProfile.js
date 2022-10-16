@@ -1,8 +1,87 @@
-import React from "react";
+import { data } from "autoprefixer";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // components
 
-export default function CardProfile() {
+export default function CardProfile({ setoken }) {
+
+    const [profile, setProfile] = useState({
+        name: { first_name: "", last_name: "" },
+    });
+
+    const navigate = useNavigate();
+    const [token, setToken] = useState(null);
+    const [alamat, setAlamat] = useState("");
+    const [email, setEmail] = useState("");
+    const [website, setWebsite] = useState("");
+    const [deskripsi, setDeskripsi] = useState("");
+
+    const data = [];
+
+    function UpProfile() {
+        data.push(alamat);
+        data.push(email);
+        data.push(website);
+        data.push(deskripsi);
+    }
+
+    //Get Token
+    useEffect(() => {
+        if (!sessionStorage.getItem("data")) {
+            navigate("/login");
+
+        } else {
+            const item = sessionStorage.getItem("data");
+            if (item) {
+                setToken(JSON.parse(item));
+            }
+        }
+    }, []);
+
+    useEffect(() => {
+        if (token !== null) {
+            getProfile(token);
+        }
+    }, [token]);
+
+    const getProfile = async (token) => {
+        await axios
+            .get(`${process.env.REACT_APP_BASE_URL}/hr/profile`, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            })
+            .then((res) => {
+                setProfile(res.data.data);
+                console.log(res.data.data)
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }
+
+    const updateProfile = async token => {
+        await axios
+            .put(
+                `${process.env.REACT_APP_BASE_URL}/detailperusahaan/basic`,
+                {
+                    profile: data,
+                },
+                { headers: { Authorization: `Bearer ${token}`}}
+            )
+            .then(res => {
+                if (res.status === 200 ){
+                    setProfile(res.data.data)
+                }
+
+            })
+            .catch(err => {
+                console.log(err.response.data)
+            })
+    };
+
     return (
         <>
 
@@ -45,7 +124,7 @@ export default function CardProfile() {
                             <label for="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email address</label>
                             <input type="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="john.doe@company.com" required="" />
                         </div>
-                        <div>
+                        {/* <div>
                             <label for="city" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">City</label>
                             <select id="city" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
                                 <option disabled> -- Select City -- </option>
@@ -54,16 +133,10 @@ export default function CardProfile() {
                                 <option value={"Jember"}>Jember</option>
                                 <option value={"Situbondo"}>Situbondo </option>
                             </select>
-                        </div>
+                        </div> */}
                         <div>
                             <label for="industry_category" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Industry Category</label>
-                            <select id="industry_category" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
-                                <option disabled> -- Select Category -- </option>
-                                <option value={"IC"}>IT Counsultant</option>
-                                <option value={"BI"}>Business Intelegent</option>
-                                <option value={"WD"}>Web Devoloper</option>
-                                <option value={"E"}>Engineering</option>
-                            </select>
+                            <input id="industry_category" type="text" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                         </div>
                         <div>
                             <label for="adress" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Company Address</label>
