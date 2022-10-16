@@ -170,6 +170,22 @@ const App = () => {
                 </div>
                 {/* END SERVICES */}
 
+                {/* START SERVICES */}
+                <div className="section relative pt-20 pb-8 md:pt-16 md:pb-0 bg-white">
+                  <div className="container xl:max-w-6xl mx-auto px-4">
+                    {/* HEADING START */}
+                    <header className="text-center mx-auto mb-12 lg:px-20">
+                      <h2 className="text-2xl leading-normal mb-2 font-bold text-black">Our Tutorial</h2>
+                      <p className="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">Here a Tutorial to Help You Use Our Platform</p>
+                    </header>
+                    <div className="h-56 grid grid-cols-1 content-center">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/KJoSs4m6PCE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    {/* END HEADER */}
+                  </div>
+                </div>
+                {/* END SERVICES */}
+
             </nav>
 
             
