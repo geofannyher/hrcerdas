@@ -4,11 +4,13 @@ const App = () => {
 
     return (
         <div className="container-Hero">
-            <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
-                <div className="container flex flex-wrap justify-between items-center mx-auto">
-                    <a href="https://flowbite.com/" className="flex items-center">
-                        <img src="https://flowbite.com/docs/images/logo.svg" className="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
-                        <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+            <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+                {/* START NAVBAR */}
+                <div class="container flex flex-wrap justify-between items-center mx-auto">
+                    <a href="https://flowbite.com/" class="flex items-center">
+                        <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+                        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+
                     </a>
                     <div className="flex md:order-2">
                         <div className="mx-4">
@@ -39,89 +41,42 @@ const App = () => {
                         </ul>
                     </div>
                 </div>
+
+                {/* END NAVBAR */}
+
+                {/* HERO */}
+                <div className="section relative z-0 py-16 md:pt-32 md:pb-20 bg-gray-50">
+                    <div className="container xl:max-w-6xl mx-auto px-4">
+                        <div className="flex flex-wrap flex-row -mx-4 justify-center">
+                        {/* START CONTENT */}
+                        <div className="flex-shrink max-w-full px-4 sm:px-12 lg:px-18 w-full sm:w-9/12 lg:w-1/2 self-center">
+                            <img className="w-full max-w-full h-auto" alt="creative agency" src={`${process.env.PUBLIC_URL}/1.png`}></img>
+                        </div>
+                        {/* END CONTENT */}
+
+                        {/* START TEXT */}
+                        <div className="flex-shrink max-w-full px-4 w-full md:w-9/12 lg:w-1/2 self-center lg:pr-12">
+                            <div className="text-center lg:text-left mt-6 lg:mt-0">
+                                <div className="mb-12">
+                                    <h1 className="text-4xl leading-normal text-black font-bold mb-4">We are a Digital Agency HR Cerdas</h1>
+                                    <p className="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">We would direct you to limitless ideas and move your brand</p>
+                                </div>
+                                <a className="py-2.5 px-10 inline-block text-center leading-normal text-gray-900 bg-white border-b border-gray-100 hover:text-black hover:ring-0 focus:outline-none focus:ring-0 mr-4" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="inline-block mr-1 w-6 h-6 text-yellow-300 dark:text-yellow-300" fill="blue" viewBox="0 0 20 20"><path fillRule="evenodd" stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg>
+                                    Get Started
+                                </a>
+
+                            </div>
+                        </div>
+                        {/* END TEXT */}
+
+                        </div>
+                    </div>
+                </div>
+                {/* END HERO */}
             </nav>
 
-            <section className="header relative pt-16 items-center flex h-screen max-h-860-px">
-                <div className="container mx-auto items-center flex flex-wrap">
-                    <div className="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
-                        <div className="pt-32 sm:pt-0">
-                            <h2 className="font-semibold text-4xl text-blueGray-600">Notus React - A beautiful extension for Tailwind CSS</h2>
-                            <p className="mt-4 text-lg leading-relaxed text-blueGray-500">Notus React is Free and Open Source. It does not change any of the CSS from</p>
-                            <div className="mt-12">
-
-                                <a
-                                    href="#"
-                                    target="_blank"
-                                    className="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-blue-900 active:bg-lightBlue-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
-                                > Get started </a>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <img
-                    className="absolute top-0 b-auto right-0 pt-16 sm:w-6/12 -mt-48 sm:mt-0 w-10/12 max-h-860px"
-                    url="https://mdbootstrap.com/img/new/standard/city/041.jpg"
-                    alt="..."
-                />
-            </section>
-
-            <section className="mt-48 md:mt-40 pb-40 relative bg-blueGray-100">
-                <div className="-mt-20 top-0 bottom-auto left-0 right-0 w-full absolute h-20" style={{ transform: "translateZ(0)" }}>
-                    <svg className="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
-                        <polygon className="text-blueGray-100 fill-current" points="2560 0 2560 100 0 100"></polygon>
-                    </svg>
-                </div>
-
-
-                <div className="container mx-auto">
-                    <div className="flex flex-wrap items-center">
-                        <div className="w-10/12 md:w-6/12 lg:w-4/12 px-12 md:px-4 mr-auto ml-auto -mt-32">
-                            <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-lightBlue-500">
-                                <img
-                                    alt="..."
-                                    src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80"
-                                    className="w-full align-middle rounded-t-lg"
-                                />
-                                <blockquote className="relative p-8 mb-4">
-                                    <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95" className="absolute left-0 w-full block h-95-px -top-94-px">
-                                        <polygon points="-30,95 583,95 583,65" className="text-lightBlue-500 fill-current"></polygon>
-                                    </svg>
-                                    <h4 className="text-xl font-bold text-white">Great for your awesome project</h4>
-                                    <p className="text-md font-light mt-2 text-white">Putting together a page has never been easier than matching together pre-made components. From landing pages presentation to login areas, you can easily customise and built your pages.</p>
-                                </blockquote>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="w-full md:w-6/12 px-4">
-                    <div className="flex flex-wrap">
-                        <div className="w-full md:w-6/12 px-4">
-                            <div className="relative flex flex-col mt-4">
-                                <div className="px-4 py-5 flex-auto">
-                                    <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white">
-                                        <i className="fas fa-sitemap"></i>
-                                    </div>
-                                    <h6 className="text-xl mb-1 font-semibold">CSS Components</h6>
-                                    <p className="mb-4 text-blueGray-500">Notus React comes with a huge number of Fully Coded CSS components.</p>
-                                </div>
-                            </div>
-                            <div className="relative flex flex-col mt-4">
-                                <div className="px-4 py-5 flex-auto">
-                                    <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white">
-                                        <i className="fas fa-sitemap"></i>
-                                    </div>
-                                    <h6 className="text-xl mb-1 font-semibold">CSS Components</h6>
-                                    <p className="mb-4 text-blueGray-500">Notus React comes with a huge number of Fully Coded CSS components.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </section>
+            
 
             {/* <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
                   <a href="#" className="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" role="alert">
