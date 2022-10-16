@@ -58,12 +58,11 @@ const App = () => {
                         <div className="flex-shrink max-w-full px-4 w-full md:w-9/12 lg:w-1/2 self-center lg:pr-12">
                             <div className="text-center lg:text-left mt-6 lg:mt-0">
                                 <div className="mb-12">
-                                    <h1 className="text-4xl leading-normal text-black font-bold mb-4">We are a Digital Agency HR Cerdas</h1>
-                                    <p className="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">We would direct you to limitless ideas and move your brand</p>
+                                    <h1 className="text-3xl leading-normal text-blue-900 font-bold mb-4">Make it Easy to Find The Right Candidate for Your Company</h1>
+                                    <p className="text-gray-900 leading-relaxed font-light text-xl mx-auto pb-2">HR Cerdas is a trusted professional talent recruiter and management partner and give you a best feature</p>
                                 </div>
-                                <a className="py-2.5 px-10 inline-block text-center leading-normal text-white bg-blue-900 border-b border-gray-100 rounded-lg hover:text-black hover:ring-0 focus:outline-none focus:ring-0 mr-4" href="#">
-                                    {/* <svg xmlns="http://www.w3.org/2000/svg" className="inline-block mr-1 w-6 h-6 text-yellow-300 dark:text-yellow-300" fill="blue" viewBox="0 0 20 20"><path fillRule="evenodd" stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg> */}
-                                    Get Started
+                                <a className="py-2.5 px-10 inline-block text-center font-semibold leading-normal text-white bg-blue-900 border-b border-gray-100 rounded-lg hover:ring-0 focus:outline-none focus:ring-0 mr-4" href="/login">
+                                    GET STARTED
                                 </a>
                             </div>
                         </div>
@@ -75,6 +74,100 @@ const App = () => {
                 {/* END HERO */}
 
                 {/* START SERVICES */}
+                <div className="section relative pt-20 pb-8 md:pt-16 md:pb-0 bg-white">
+                  <div className="container xl:max-w-6xl mx-auto px-4">
+                    {/* HEADING START */}
+                    <header className="text-center mx-auto mb-12 lg:px-20">
+                      <h2 className="text-2xl leading-normal mb-2 font-bold text-black">Our Services</h2>
+                      <p className="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">Our Company Have a Few Service For You</p>
+                    </header>
+                    {/* END HEADER */}
+
+                    {/* START ROW */}
+                    <div className="flex flex-wrap flex-row -mx-4 text-center">
+                      <div className="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp" data-wow-duration="1s">
+                        {/* START SERVICE BLOCK */}
+                        <div className="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
+                          <div className="inline-block text-gray-900 mb-4">
+                            {/* ICON */}
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" /></svg>
+                          </div>
+                          <h3 className="text-lg leading-normal mb-2 font-semibold text-black">Fast Tracking</h3>
+                          <p className="text-gray-500">HR Cerdas will be give you fast track to monitoring job applicant on your company</p>
+                        </div>
+                        {/* END SERVICE BLOCK */}
+                      </div>
+
+                      <div className="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp" data-wow-duration="1s">
+                        {/* START SERVICE BLOCK */}
+                        <div className="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
+                          <div className="inline-block text-gray-900 mb-4">
+                            {/* ICON */}
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
+                          </div>
+                          <h3 className="text-lg leading-normal mb-2 font-semibold text-black">Include Test for Job Applicant Requirements</h3>
+                          <p className="text-gray-500">Headhunter have an easy way to choose job applicant with test</p>
+                        </div>
+                        {/* END SERVICE BLOCK */}
+                      </div>
+
+                      <div className="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp" data-wow-duration="1s">
+                        {/* START SERVICE BLOCK */}
+                        <div className="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
+                          <div className="inline-block text-gray-900 mb-4">
+                            {/* ICON */}
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" /></svg>
+                          </div>
+                          <h3 className="text-lg leading-normal mb-2 font-semibold text-black">Best Connected</h3>
+                          <p className="text-gray-500">You can linked with another account like Linkedin and also Facebook</p>
+                        </div>
+                        {/* END SERVICE BLOCK */}
+                      </div>
+
+                      <div className="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp" data-wow-duration="1s">
+                        {/* START SERVICE BLOCK */}
+                        <div className="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
+                          <div className="inline-block text-gray-900 mb-4">
+                            {/* ICON */}
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" /></svg>
+                          </div>
+                          <h3 className="text-lg leading-normal mb-2 font-semibold text-black">Social Media Analytic</h3>
+                          <p className="text-gray-500">Improve your recruitment process to get the best talent</p>
+                        </div>
+                        {/* END SERVICE BLOCK */}
+                      </div>
+
+                      <div className="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp" data-wow-duration="1s">
+                        {/* START SERVICE BLOCK */}
+                        <div className="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
+                          <div className="inline-block text-gray-900 mb-4">
+                            {/* ICON */}
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" /></svg>
+                          </div>
+                          <h3 className="text-lg leading-normal mb-2 font-semibold text-black">User Friendly</h3>
+                          <p className="text-gray-500">With the nice appearance will make you easily use HR Cerdas</p>
+                        </div>
+                        {/* END SERVICE BLOCK */}
+                      </div>
+
+                      <div className="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp" data-wow-duration="1s">
+                        {/* START SERVICE BLOCK */}
+                        <div className="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
+                          <div className="inline-block text-gray-900 mb-4">
+                            {/* ICON */}
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z" /></svg>
+                          </div>
+                          <h3 className="text-lg leading-normal mb-2 font-semibold text-black">Easy Use</h3>
+                          <p className="text-gray-500">HR Cerdas give you best feature and easy use to use our service</p>
+                        </div>
+                        {/* END SERVICE BLOCK */}
+                      </div>
+
+                    </div>
+                    {/* END ROW */}
+
+                  </div>
+                </div>
                 {/* END SERVICES */}
 
             </nav>
