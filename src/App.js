@@ -1,22 +1,60 @@
 
 const App = () => {
 
-  return (
-        <div className="container-Hero">
-          <section className="bg-white dark:bg-gray-900">
 
-            <section className="header relative pt-16 items-center flex h-screen max-h-860-px">
+    return (
+        <div className="container-Hero">
+            <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+                <div class="container flex flex-wrap justify-between items-center mx-auto">
+                    <a href="https://flowbite.com/" class="flex items-center">
+                        <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+                        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                    </a>
+                    <div class="flex md:order-2">
+                        <div className="mx-4">
+                            <a type="button" href="/login" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</a>
+                        </div>
+                        <div>
+                            <a type="button" href="/register" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800">Register</a>
+                        </div>
+                        <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-cta" aria-expanded="false">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                        </button>
+                    </div>
+                    <div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+                        <ul class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                            <li>
+                                <a href="#" class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">Home</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <section className="bg-white dark:bg-gray-900">
                 <div className="container mx-auto items-center flex flex-wrap">
                     <div className="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
                         <div className="pt-32 sm:pt-0">
                             <h2 className="font-semibold text-4xl text-blueGray-600">Notus React - A beautiful extension for Tailwind CSS</h2>
                             <p className="mt-4 text-lg leading-relaxed text-blueGray-500">Notus React is Free and Open Source. It does not change any of the CSS from</p>
                             <div className="mt-12">
+
                             <a
                                 href="#"
                                 target="_blank"
                                 className="get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-blue-900 active:bg-lightBlue-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150"
                             > Get started </a>
+
                             </div>
                         </div>
                     </div>
@@ -35,6 +73,7 @@ const App = () => {
                         <polygon className="text-blueGray-100 fill-current" points="2560 0 2560 100 0 100"></polygon>
                     </svg>
                 </div>
+
 
                 <div className="container mx-auto">
                     <div className="flex flex-wrap items-center">
@@ -81,9 +120,10 @@ const App = () => {
                         </div>
                     </div>
                 </div>
+
             </section>
 
-              {/* <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
+            {/* <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
                   <a href="#" className="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700" role="alert">
 
                       <span className="text-xs bg-primary-600 rounded-full text-white px-4 py-1.5 mr-3">New</span> <span className="text-sm font-medium">Flowbite is out! See whats new</span>
@@ -140,7 +180,7 @@ const App = () => {
                       </div>
                   </div>
               </div> */}
-              {/* <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+            {/* <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
 
                   <img className="w-full dark:hidden" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg" alt="dashboard image" />
                   <img className="w-full hidden dark:block" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg" alt="dashboard image" />
@@ -154,7 +194,7 @@ const App = () => {
                       </a>
                   </div>
               </div> */}
-              {/* <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+            {/* <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
                   <div className="max-w-screen-md mb-8 lg:mb-16">
 
                       <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Designed for business teams like yours</h2>
@@ -209,9 +249,11 @@ const App = () => {
                   </div>
               </div> */}
 
+
           </section>
 
         </div>
+
     )
 }
 
