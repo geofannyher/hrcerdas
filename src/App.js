@@ -3,7 +3,7 @@ const App = () => {
 
   return (
         <div className="container-Hero">
-          <section className="bg-white relative dark:bg-gray-900 items-center flex h-screen max-h-860-px">
+          <section className="bg-white dark:bg-gray-900">
 
             <section className="header relative pt-16 items-center flex h-screen max-h-860-px">
                 <div className="container mx-auto items-center flex flex-wrap">
