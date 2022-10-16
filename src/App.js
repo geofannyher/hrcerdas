@@ -61,9 +61,9 @@ const App = () => {
                                     <h1 className="text-4xl leading-normal text-black font-bold mb-4">We are a Digital Agency HR Cerdas</h1>
                                     <p className="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">We would direct you to limitless ideas and move your brand</p>
                                 </div>
-                                <a className="py-2.5 px-10 inline-block text-center leading-normal text-white bg-blue-900 border-b border-gray-100 rounded-lg hover:text-black hover:ring-0 focus:outline-none focus:ring-0 mr-4" href="#">
+                                <a className="py-2.5 px-10 inline-block text-center font-semibold leading-normal text-white bg-blue-900 border-b border-gray-100 rounded-lg hover:text-black hover:ring-0 focus:outline-none focus:ring-0 mr-4" href="#">
                                     {/* <svg xmlns="http://www.w3.org/2000/svg" className="inline-block mr-1 w-6 h-6 text-yellow-300 dark:text-yellow-300" fill="blue" viewBox="0 0 20 20"><path fillRule="evenodd" stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg> */}
-                                    Get Started
+                                    GET STARTED
                                 </a>
                             </div>
                         </div>
@@ -75,6 +75,100 @@ const App = () => {
                 {/* END HERO */}
 
                 {/* START SERVICES */}
+                <div className="section relative pt-20 pb-8 md:pt-16 md:pb-0 bg-white">
+                  <div className="container xl:max-w-6xl mx-auto px-4">
+                    {/* HEADING START */}
+                    <header className="text-center mx-auto mb-12 lg:px-20">
+                      <h2 className="text-2xl leading-normal mb-2 font-bold text-black">Our Services</h2>
+                      <p className="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">Our Company Have a Few Service For You</p>
+                    </header>
+                    {/* END HEADER */}
+
+                    {/* START ROW */}
+                    <div className="flex flex-wrap flex-row -mx-4 text-center">
+                      <div className="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp" data-wow-duration="1s">
+                        {/* START SERVICE BLOCK */}
+                        <div className="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
+                          <div className="inline-block text-gray-900 mb-4">
+                            {/* ICON */}
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
+                          </div>
+                          <h3 className="text-lg leading-normal mb-2 font-semibold text-black">Service</h3>
+                          <p className="text-gray-500">This is a wider card with supporting text below as a natural content</p>
+                        </div>
+                        {/* END SERVICE BLOCK */}
+                      </div>
+
+                      <div className="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp" data-wow-duration="1s">
+                        {/* START SERVICE BLOCK */}
+                        <div className="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
+                          <div className="inline-block text-gray-900 mb-4">
+                            {/* ICON */}
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
+                          </div>
+                          <h3 className="text-lg leading-normal mb-2 font-semibold text-black">Service</h3>
+                          <p className="text-gray-500">This is a wider card with supporting text below as a natural content</p>
+                        </div>
+                        {/* END SERVICE BLOCK */}
+                      </div>
+
+                      <div className="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp" data-wow-duration="1s">
+                        {/* START SERVICE BLOCK */}
+                        <div className="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
+                          <div className="inline-block text-gray-900 mb-4">
+                            {/* ICON */}
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
+                          </div>
+                          <h3 className="text-lg leading-normal mb-2 font-semibold text-black">Service</h3>
+                          <p className="text-gray-500">This is a wider card with supporting text below as a natural content</p>
+                        </div>
+                        {/* END SERVICE BLOCK */}
+                      </div>
+
+                      <div className="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp" data-wow-duration="1s">
+                        {/* START SERVICE BLOCK */}
+                        <div className="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
+                          <div className="inline-block text-gray-900 mb-4">
+                            {/* ICON */}
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
+                          </div>
+                          <h3 className="text-lg leading-normal mb-2 font-semibold text-black">Service</h3>
+                          <p className="text-gray-500">This is a wider card with supporting text below as a natural content</p>
+                        </div>
+                        {/* END SERVICE BLOCK */}
+                      </div>
+
+                      <div className="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp" data-wow-duration="1s">
+                        {/* START SERVICE BLOCK */}
+                        <div className="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
+                          <div className="inline-block text-gray-900 mb-4">
+                            {/* ICON */}
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
+                          </div>
+                          <h3 className="text-lg leading-normal mb-2 font-semibold text-black">Service</h3>
+                          <p className="text-gray-500">This is a wider card with supporting text below as a natural content</p>
+                        </div>
+                        {/* END SERVICE BLOCK */}
+                      </div>
+
+                      <div className="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp" data-wow-duration="1s">
+                        {/* START SERVICE BLOCK */}
+                        <div className="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
+                          <div className="inline-block text-gray-900 mb-4">
+                            {/* ICON */}
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
+                          </div>
+                          <h3 className="text-lg leading-normal mb-2 font-semibold text-black">Service</h3>
+                          <p className="text-gray-500">This is a wider card with supporting text below as a natural content</p>
+                        </div>
+                        {/* END SERVICE BLOCK */}
+                      </div>
+
+                    </div>
+                    {/* END ROW */}
+
+                  </div>
+                </div>
                 {/* END SERVICES */}
 
             </nav>
