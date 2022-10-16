@@ -61,11 +61,10 @@ const App = () => {
                                     <h1 className="text-4xl leading-normal text-black font-bold mb-4">We are a Digital Agency HR Cerdas</h1>
                                     <p className="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">We would direct you to limitless ideas and move your brand</p>
                                 </div>
-                                <a className="py-2.5 px-10 inline-block text-center leading-normal text-gray-900 bg-white border-b border-gray-100 hover:text-black hover:ring-0 focus:outline-none focus:ring-0 mr-4" href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="inline-block mr-1 w-6 h-6 text-yellow-300 dark:text-yellow-300" fill="blue" viewBox="0 0 20 20"><path fillRule="evenodd" stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg>
+                                <a className="py-2.5 px-10 inline-block text-center leading-normal text-white bg-blue-900 border-b border-gray-100 rounded-lg hover:text-black hover:ring-0 focus:outline-none focus:ring-0 mr-4" href="#">
+                                    {/* <svg xmlns="http://www.w3.org/2000/svg" className="inline-block mr-1 w-6 h-6 text-yellow-300 dark:text-yellow-300" fill="blue" viewBox="0 0 20 20"><path fillRule="evenodd" stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg> */}
                                     Get Started
                                 </a>
-
                             </div>
                         </div>
                         {/* END TEXT */}
@@ -74,6 +73,10 @@ const App = () => {
                     </div>
                 </div>
                 {/* END HERO */}
+
+                {/* START SERVICES */}
+                {/* END SERVICES */}
+
             </nav>
 
             
