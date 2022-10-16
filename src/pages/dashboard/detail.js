@@ -13,7 +13,7 @@ const Detail = () => {
                                         <p className="text-base font-light text-gray-500 dark:text-gray-400">Tangerang, Jawa Barat</p>
                                         <p className="text-base font-light text-gray-500 dark:text-gray-400">IDR 4.000.000 / bulan</p>
                                         <div className="">
-                                            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Easy Apply</button>
+                                            <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Easy Apply</button>
                                         </div>
                                         <p className="text-base font-light text-gray-500 dark:text-gray-400"><time pubdate datetime="2022-02-08" title="February 8th, 2022">Diperbarui 2 jam lalu</time></p>
                                     </div>
