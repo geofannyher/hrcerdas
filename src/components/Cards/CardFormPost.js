@@ -44,7 +44,8 @@ export default function CardFormPost() {
         )
             .then((res) => {
                 if (res.status === 200) {
-                    onClose(true);
+                    // onClose(true);
+                    console.log(res.data.data)
                 }
             })
             .catch((err) => {
@@ -117,7 +118,7 @@ export default function CardFormPost() {
                             </div>
                         </li>
                     </ul>
-                    <button type="submit" onClick={() =>{ getValue }} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Post</button>
+                    <button type="submit"  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Post</button>
                 </form>
                 </div>
             </div>
