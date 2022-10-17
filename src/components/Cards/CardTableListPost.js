@@ -1,33 +1,45 @@
 import axios from 'axios';
 import {useEffect,useState} from "react";
+import { useNavigate } from 'react-router-dom';
 
 
 export default function CardTableListPost() {
 
 // state
-const [local,setLocal] = useState(null);
+// const [local,setLocal] = useState(null);
+const [token, setToken] = useState(null) ;
 const [lowongan,setLowongan] = useState({});
+const navigate = useNavigate();
 
 //  Get Login Data
-useEffect(()=> {
-    let item = sessionStorage.getItem("data");
-    if (item){
-        setLocal(JSON.parse(item));
+useEffect(() => {
+    if (!sessionStorage.getItem("data")) {
+        navigate("/login");
+    } else {
+        const item = sessionStorage.getItem("data");
+        if (item) {
+            setToken(JSON.parse(item));
+        }
     }
 }, []);
+
+useEffect(() => {
+    if(token !== null) {
+        getLowonganHr(token);
+    }
+})
 
 const getLowonganHr = async () => {
     await axios
     .get(`${process.env.REACT_APP_BASE_URL}/lowonganpekerjaan/getlowonganhr`, {
-        headers: { Authorization: `Bearer ${local}` },
+        headers: { Authorization: `Bearer ${token}` },
     })
-    .then(res => {
-        if (res.status === 200) {
-            setLowongan(res.data.data);
-        }
+    .then((res) => {
+        setLowongan(res.data.data);
+        console.log(res.data.data)
     })
-    .catch(err => {
-        console.log(err.response.data);
+    .catch((error) => {
+        console.error(error);
     });
 };
 
