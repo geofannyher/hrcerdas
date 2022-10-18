@@ -3,20 +3,35 @@
 // import CardLineChart from "../../components/Cards/CardLineChart";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import CardTablePelamar from "../../components/Cards/CardTablePelamar";
 import HeaderStats from "../../components/HeaderStats.js/HeaderStasts";
 
 
 export default function Dashboard() {
+    const navigate = useNavigate();
     const [local, setLocal] = useState(null);
     const [profile, setProfile] = useState({})
 
     useEffect(() => {
-        let item = sessionStorage.getItem("data");
-        if (item) {
-            setLocal(JSON.parse(item));
+        if (!sessionStorage.getItem("data")) {
+            navigate("/login");
+
+        } else {
+            const item = sessionStorage.getItem("data");
+            if (item) {
+                setLocal(JSON.parse(item));
+            }
         }
     }, []);
+
+    useEffect(() => {
+        if (local !== null) {
+            getProfile(local);
+        }
+    }, [local]);
+
+    
 
     useEffect(() => {
         if (local !== null){
