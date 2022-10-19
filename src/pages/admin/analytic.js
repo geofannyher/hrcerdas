@@ -1,4 +1,6 @@
 import React from "react";
+import CardBigFive from "../../components/Cards/User/CardBigFive";
+import CardInterest from "../../components/Cards/User/CardInterest";
 import PhotoProfileAnalytic from "../../components/Cards/User/CardPhotosAnalytic";
 import CardScore from "../../components/Cards/User/CardScore";
 import Chart from "../../components/Cards/User/CardSentiment";
@@ -24,6 +26,12 @@ export default function Analytic() {
                 </div>
                 <div className="w-full mb-12 px-4 xl:w-4/12">
                     <CardTolerant />
+                </div>
+                <div className="w-full mb-12 px-4 xl:w-6/12">
+                    <CardBigFive />
+                </div>
+                <div className="w-full mb-12 px-4 xl:w-6/12">
+                    <CardInterest />
                 </div>
             </div>
         </>
