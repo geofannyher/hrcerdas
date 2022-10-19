@@ -19,6 +19,8 @@ export default function CardProfile() {
     const [email, setEmail] = useState("");
     const [website, setWebsite] = useState("");
     const [deskripsi, setDeskripsi] = useState("");
+    const [capacity, setCapacity] = useState("");
+    const [industryCategory, setindustryCategory] = useState("");
 
 
 
@@ -63,7 +65,7 @@ export default function CardProfile() {
         const body = {
             alamat, email, website, deskripsi
         }
-        // console.warn(body)
+        console.warn(body)
         await axios
             .put(
                 `${process.env.REACT_APP_BASE_URL}/detailperusahaan/basic`,
@@ -72,7 +74,8 @@ export default function CardProfile() {
             )
             .then(res => {
                 if (res.status === 200) {
-                    setProfile(res.data.data)
+                    // navigate("/admin/profile")
+                    console.log("data sukses di edit")
                 }
 
             })
@@ -80,6 +83,30 @@ export default function CardProfile() {
                 console.log(err.response.data)
             })
     };
+
+    const updateProfile2 = async token => {
+
+        const body = {
+            capacity, industryCategory
+        }
+        console.warn(body)
+        await axios
+            .put(
+                `${process.env.REACT_APP_BASE_URL}/detailperusahaan/detailprofile`,
+                body,
+                { headers: { Authorization: `Bearer ${token}` } }
+            )
+            .then(res => {
+                if (res.status === 200) {
+                    navigate("/admin/profile")
+                    console.log("data sukses di edit")
+                }
+
+            })
+            .catch(err => {
+                console.log(err.response.data)
+            })
+    }
 
     return (
         <>
@@ -121,11 +148,11 @@ export default function CardProfile() {
                         </div>
                         <div>
                             <label for="employes" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Total Employes</label>
-                            <input type="text" id="visitors" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required="" />
+                            <input type="text" id="employes" onChange={e => setCapacity(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder=""  />
                         </div>
                         <div>
                             <label for="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email address</label>
-                            <input type="email" onChange={e => setEmail(e.target.value)} id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="john.doe@company.com" required />
+                            <input type="email" onChange={e => setEmail(e.target.value)} id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="john.doe@company.com"  />
                         </div>
                         {/* <div>
                             <label for="city" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">City</label>
@@ -139,11 +166,11 @@ export default function CardProfile() {
                         </div> */}
                         <div>
                             <label for="industry_category" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Industry Category</label>
-                            <input id="industry_category" type="text"  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                            <input id="industry_category" type="text" onChange={e => setindustryCategory(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                         </div>
                         <div>
                             <label for="adress" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Company Address</label>
-                            <input type="text" id="address" onChange={e => setAlamat(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Panorama street" required />
+                            <input type="text" id="address" onChange={e => setAlamat(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Panorama street"  />
                         </div>
                         <div>
                             <label for="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Company Description</label>
@@ -166,10 +193,12 @@ export default function CardProfile() {
                         <input className="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file_input" type="file" />
                         <p className="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>
                     </div>
-                    <a type="submit" href="/" onClick={() => { updateProfile(token); }}  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none m-6 focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save Data</a>
+                    <button type="submit" onClick={() => { updateProfile(token);}}  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none m-6 focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save Data</button>
                 </form>
 
             </div>
+
+            
         </>
     );
 }
