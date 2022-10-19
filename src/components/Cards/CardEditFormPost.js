@@ -51,7 +51,7 @@ useEffect(() => {
 
 const getLowongan = async (token) => {
     await axios
-    .get(`${process.env.REACT_APP_BASE_URL}/lowonganpekerjaan/detaillowongan/id/${param._id}`, {
+    .get(`${process.env.REACT_APP_BASE_URL}/lowonganpekerjaan/detaillowongan/id/${id}`, {
         headers: {
             Authorization: `Bearer ${token}`,
         },
