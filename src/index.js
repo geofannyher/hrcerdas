@@ -22,6 +22,8 @@ import DetailUser from "./pages/admin/detail";
 import ListPost from "./pages/admin/listPost";
 import EditPost from "./pages/admin/editpost";
 import DetailPost from "./pages/admin/detailpost";
+import Analytic from "./pages/admin/analytic";
+import Chart from "./components/Cards/User/CardSentiment";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -43,16 +45,16 @@ root.render(
         {/* layouts */}
         <Route path="/" element={<Layout />}>
           <Route path="/admin" element={<Admin />} />
+          <Route path="/analitik" element={<Chart />} />
           <Route path="/detail" element={<Detail />} />
-
           <Route path="/admin/listpost" element={<ListPost />} />
           <Route path="/admin/listpost/addPost" element={<AddPost />} />
           <Route path="/admin/editPost/:id" element={<EditPost />} />
           <Route path="/admin/listpost/detailPost/:id" element={<DetailPost />} />
-
-          <Route path="/admin/detail" element={ <DetailUser />} />
-          <Route path="/admin/profile" element={ <Profile />} />
-          <Route path="/admin/profile/edit" element={ <EditProfile />} />
+          <Route path="/admin/analytic" element={< Analytic />} />
+          <Route path="/admin/detail" element={<DetailUser />} />
+          <Route path="/admin/profile" element={<Profile />} />
+          <Route path="/admin/profile/edit" element={<EditProfile />} />
         </Route>
       </Routes>
       {/* <Footer /> */}
