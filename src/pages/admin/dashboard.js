@@ -4,6 +4,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import CardTableListPost from "../../components/Cards/CardTableListPost"
 import CardTablePelamar from "../../components/Cards/CardTablePelamar";
 import HeaderStats from "../../components/HeaderStats.js/HeaderStasts";
 
@@ -58,10 +59,10 @@ export default function Dashboard() {
         <>
             <div className="flex flex-wrap">
                 <div className="w-full px-4">
-                    <HeaderStats />
+                    {/* <HeaderStats /> */}
                 </div>
                 <div className="w-full mb-12 px-12 xl:w-12/12 items-center">
-                    <CardTablePelamar />
+                    <CardTableListPost />
                 </div>
                 {/* <div className="w-full mb-12 px-4 xl:w-3/12">
                     <CardLineChart />
