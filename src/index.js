@@ -21,6 +21,7 @@ import DetailUser from "./pages/admin/detail";
 import ListPost from "./pages/admin/listPost";
 import EditPost from "./pages/admin/editpost";
 import DetailPost from "./pages/admin/detailpost";
+import { Sentiment } from "./components/Cards/User/CardSentiment";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -43,6 +44,7 @@ root.render(
         <Route path="/" element={<Layout />}>
           <Route path="/admin" element={<Admin />} />
           <Route path="/detail" element={<Detail />} />
+          <Route path="/admin/sentiment" element={<Sentiment /> } />
 
           <Route path="/admin/listpost" element={<ListPost />} />
           <Route path="/admin/listpost/addPost" element={<AddPost />} />
