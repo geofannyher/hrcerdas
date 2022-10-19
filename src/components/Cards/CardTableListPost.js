@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {useEffect,useState} from "react";
 import { useNavigate } from 'react-router-dom';
-
+import Delete from "../../components/popup/delete";
 
 export default function CardTableListPost() {
 
@@ -9,6 +9,7 @@ export default function CardTableListPost() {
 // const [local,setLocal] = useState(null);
 const [token, setToken] = useState(null) ;
 const [lowongan,setLowongan] = useState({});
+const [openModal,setOpenModal]= useState(false);
 const navigate = useNavigate();
 
 //  Get Login Data
@@ -36,7 +37,6 @@ const getLowonganHr = async () => {
     })
     .then((res) => {
         setLowongan(res.data.data);
-        console.log(res.data.data)
     })
     .catch((error) => {
         console.error(error);
@@ -110,7 +110,10 @@ const getLowonganHr = async () => {
                                     <a href="/admin/editPost">
                                         <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Edit</button>
                                     </a>
-                                    <button type="button" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800">Delete</button>
+                                    <button onClick={() => setOpenModal(true)}
+                                    type="button" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800" data-modal-toggle="modalId" aria-hidden="true" data-modal-show="true"    >Delete</button>
+                                    {/* {openModal && <Delete closeModal={setOpenModal}/> } */}
+                                    <Delete open={openModal} onCLose={() => setOpenModal(false)} />
                                     <a href={`/admin/listpost/detailPost/${val._id}`}>
                                     <button type="button" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 focus:outline-none dark:focus:ring-green-800">Detail</button>
                                     </a>
