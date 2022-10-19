@@ -1,3 +1,4 @@
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
@@ -21,7 +22,6 @@ import DetailUser from "./pages/admin/detail";
 import ListPost from "./pages/admin/listPost";
 import EditPost from "./pages/admin/editpost";
 import DetailPost from "./pages/admin/detailpost";
-import { Sentiment } from "./components/Cards/User/CardSentiment";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -44,12 +44,11 @@ root.render(
         <Route path="/" element={<Layout />}>
           <Route path="/admin" element={<Admin />} />
           <Route path="/detail" element={<Detail />} />
-          <Route path="/admin/sentiment" element={<Sentiment /> } />
 
           <Route path="/admin/listpost" element={<ListPost />} />
           <Route path="/admin/listpost/addPost" element={<AddPost />} />
           <Route path="/admin/editPost" element={<EditPost />} />
-          <Route path="/admin/listpost/detailPost" element={<DetailPost />} />
+          <Route path="/admin/listpost/detailPost/:id" element={<DetailPost />} />
 
           <Route path="/admin/detail" element={ <DetailUser />} />
           <Route path="/admin/profile" element={ <Profile />} />
