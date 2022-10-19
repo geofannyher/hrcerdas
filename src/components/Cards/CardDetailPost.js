@@ -55,10 +55,6 @@ const CardDetailPost  = () =>{
             console.log(err.response.data);
           });
     }
-const kontol = []
-    detail.map(e=>{
-
-    })
 
     return (
         <>
@@ -111,7 +107,7 @@ const kontol = []
                                     </div>
                                 </th>
                                 <td className="py-4 px-6">
-                                {val.alasan}
+                                {val.name}
                                 </td>
                                 <td className="py-4 px-6">
                                 {val.alasan}
@@ -122,9 +118,12 @@ const kontol = []
                                 <td className="py-4 px-6">
                                     <span className="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">{val.id_pelamar}</span>
                                 </td>
+                                <td className="py-4 px-6">
+                                    <span className="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">{val.id_pelamar}</span>
+                                </td>
                                 <td className="flex items-center py-4 px-6 space-x-3">
-                                    <a href={`/admin/listpost/detailPost/${val._id}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
-                                    <a href="#" className="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
+                                    <a href={`/admin/listpost/detailPost/${val.id_pelamar}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                                    <a href={`/admin/analytic/${val.id_pelamar}`} className="font-medium text-green-600 dark:text-green-500 hover:underline">Analytic</a>
                                 </td>
                             </tr>
                         </tbody>
