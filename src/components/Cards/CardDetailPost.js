@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+
 const CardDetailPost  = () =>{
     const [token, setToken] = useState(null);
     const [detail, setDetail] = useState({});
-    const { id } = useParams();
-
+    const param = useParams();
+    
     // Get TOken
     useEffect(() => {
         const item = sessionStorage.getItem("data");
@@ -22,7 +23,7 @@ const CardDetailPost  = () =>{
     
     const getDetail = async () => {
         await axios
-          .get(`${process.env.REACT_APP_BASE_URL}/lowonganpekerjaan/detaillowongan/id/${id}`, {
+          .get(`${process.env.REACT_APP_BASE_URL}/lowonganpekerjaan/listpelamar/id/${param._id}`, {
             headers: { Authorization: `Bearer ${token}` },
           })
           .then((res) => {
@@ -83,20 +84,20 @@ const CardDetailPost  = () =>{
                                 <th scope="row" className="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap dark:text-white">
                                     <img className="w-10 h-10 rounded-full" src="https://cssh.northeastern.edu/wp-content/uploads/2020/01/PHIL-Nathanson-web.jpg" alt="hanip" />
                                     <div className="pl-3">
-                                        <div className="text-base font-semibold"> {val.position} </div>
+                                        <div className="text-base font-semibold"> {val.alasan} </div>
                                     </div>
                                 </th>
                                 <td className="py-4 px-6">
-                                {val.placementCity}
+                                {val.id_pelamar}
                                 </td>
                                 <td className="py-4 px-6">
-                                {val.salary}
+                                {val.nomer}
                                 </td>
                                 <td className="py-4 px-6">
-                                <span className="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">{val.start_date}</span>
+                                <span className="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">{val.namaResume}</span>
                                 </td>
                                 <td className="py-4 px-6">
-                                    <span className="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">{val.end_date}</span>
+                                    <span className="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">{val.pathResume}</span>
                                 </td>
                                 <td className="flex items-center py-4 px-6 space-x-3">
                                     <a href="admin/detail" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
