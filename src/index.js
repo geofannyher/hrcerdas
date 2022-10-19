@@ -47,7 +47,7 @@ root.render(
 
           <Route path="/admin/listpost" element={<ListPost />} />
           <Route path="/admin/listpost/addPost" element={<AddPost />} />
-          <Route path="/admin/editPost" element={<EditPost />} />
+          <Route path="/admin/editPost/:id" element={<EditPost />} />
           <Route path="/admin/listpost/detailPost/:id" element={<DetailPost />} />
 
           <Route path="/admin/detail" element={ <DetailUser />} />

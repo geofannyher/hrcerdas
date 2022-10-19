@@ -30,7 +30,7 @@ export default function CardFormPost() {
    const [startDate,setStartDate] = useState("");
    const [endDate,setEndDate] = useState("");
 
-const Position = []
+   const Position = []
    const Place = []
    const SalaryMax = []
    const SalaryMin = []
