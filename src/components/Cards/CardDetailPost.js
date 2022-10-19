@@ -1,4 +1,41 @@
-export default function CardDetailPost() {
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+const CardDetailPost  = () =>{
+    const [token, setToken] = useState(null);
+    const [detail, setDetail] = useState({});
+    const { id } = useParams();
+
+    // Get TOken
+    useEffect(() => {
+        const item = sessionStorage.getItem("data");
+        if (item) {
+            setToken(JSON.parse(item));
+            }
+        }, []);
+
+    useEffect(() => {
+        if (token !== null) {
+            getDetail(token);
+            }
+        }, [token]);
+    
+    const getDetail = async () => {
+        await axios
+          .get(`${process.env.REACT_APP_BASE_URL}/lowonganpekerjaan/detaillowongan/id/${id}`, {
+            headers: { Authorization: `Bearer ${token}` },
+          })
+          .then((res) => {
+            if (res.status === 200) {
+              setDetail(res.data.data);
+              console.log(setDetail)
+            }
+          })
+          .catch((err) => {
+            console.log(err.response.data);
+          });
+      };     
+
     return (
         <>
             <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-md rounded p-4">
@@ -39,152 +76,43 @@ export default function CardDetailPost() {
                                 </th>
                             </tr>
                         </thead>
+                        {detail.length > 0 ? (
+                            detail.map(val => (
                         <tbody>
                             <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                                <td className="py-4 px-6">
-                                    1
-                                </td>
-                                <td scope="row" className="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap dark:text-white">
+                                <th scope="row" className="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap dark:text-white">
                                     <img className="w-10 h-10 rounded-full" src="https://cssh.northeastern.edu/wp-content/uploads/2020/01/PHIL-Nathanson-web.jpg" alt="hanip" />
                                     <div className="pl-3">
-                                        <div className="text-base font-semibold">Neil Sims</div>
-                                        <div className="font-normal text-gray-500">neil.sims@flowbite.com</div>
+                                        <div className="text-base font-semibold"> {val.position} </div>
                                     </div>
+                                </th>
+                                <td className="py-4 px-6">
+                                {val.placementCity}
                                 </td>
                                 <td className="py-4 px-6">
-                                    4 Years
+                                {val.salary}
                                 </td>
                                 <td className="py-4 px-6">
-                                    UI / UX Designer
+                                <span className="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">{val.start_date}</span>
                                 </td>
                                 <td className="py-4 px-6">
-                                    $2999
-                                </td>
-                                <td className="py-4 px-6">
-                                    <span className="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">90</span>
+                                    <span className="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">{val.end_date}</span>
                                 </td>
                                 <td className="flex items-center py-4 px-6 space-x-3">
                                     <a href="admin/detail" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
                                     <a href="#" className="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
                                 </td>
                             </tr>
-                            <tr className="bg-gray-50 border-b dark:bg-gray-800 dark:border-gray-700">
-                                <td className="py-4 px-6">
-                                    2
-                                </td>
-                                <th scope="row" className="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap dark:text-white">
-                                    <img className="w-10 h-10 rounded-full" src="https://cssh.northeastern.edu/wp-content/uploads/2020/01/PHIL-Nathanson-web.jpg" alt="hanip" />
-                                    <div className="pl-3">
-                                        <div className="text-base font-semibold">Neil Sims</div>
-                                        <div className="font-normal text-gray-500">neil.sims@flowbite.com</div>
-                                    </div>
-                                </th>
-                                <td className="py-4 px-6">
-                                    5 Years
-                                </td>
-                                <td className="py-4 px-6">
-                                UI / UX Designer
-                                </td>
-                                <td className="py-4 px-6">
-                                    $1999
-                                </td>
-                                <td className="py-4 px-6">
-                                    <span className="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">90</span>
-                                </td>
-                                <td className="flex items-center py-4 px-6 space-x-3">
-                                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
-                                    <a href="#" className="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
-                                </td>
-                            </tr>
-                            <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                                <td className="py-4 px-6">
-                                    3
-                                </td>
-                                <th scope="row" className="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap dark:text-white">
-                                    <img className="w-10 h-10 rounded-full" src="https://cssh.northeastern.edu/wp-content/uploads/2020/01/PHIL-Nathanson-web.jpg" alt="hanip" />
-                                    <div className="pl-3">
-                                        <div className="text-base font-semibold">Neil Sims</div>
-                                        <div className="font-normal text-gray-500">neil.sims@flowbite.com</div>
-                                    </div>
-                                </th>
-                                <td className="py-4 px-6">
-                                    1 Years
-                                </td>
-                                <td className="py-4 px-6">
-                                UI / UX Designer
-                                </td>
-                                <td className="py-4 px-6">
-                                    $99
-                                </td>
-                                <td className="py-4 px-6">
-                                    <span className="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">50</span>
-                                </td>
-                                <td className="flex items-center py-4 px-6 space-x-3">
-                                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
-                                    <a href="#" className="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
-                                </td>
-                            </tr>
-                            <tr className="bg-gray-50 border-b dark:bg-gray-800 dark:border-gray-700">
-                                <td className="py-4 px-6">
-                                    4
-                                </td>
-                                <th scope="row" className="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap dark:text-white">
-                                    <img className="w-10 h-10 rounded-full" src="https://cssh.northeastern.edu/wp-content/uploads/2020/01/PHIL-Nathanson-web.jpg" alt="hanip" />
-                                    <div className="pl-3">
-                                        <div className="text-base font-semibold">Neil Sims</div>
-                                        <div className="font-normal text-gray-500">neil.sims@flowbite.com</div>
-                                    </div>
-                                </th>
-                                <td className="py-4 px-6">
-                                    Non Experience
-                                </td>
-                                <td className="py-4 px-6">
-                                UI / UX Designer
-                                </td>
-                                <td className="py-4 px-6">
-                                    $799
-                                </td>
-                                <td className="py-4 px-6">
-                                    <span className="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">70</span>
-                                </td>
-                                <td className="flex items-center py-4 px-6 space-x-3">
-                                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
-                                    <a href="#" className="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className="py-4 px-6">
-                                    5   
-                                </td>
-                                <th scope="row" className="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap dark:text-white">
-                                    <img className="w-10 h-10 rounded-full" src="https://cssh.northeastern.edu/wp-content/uploads/2020/01/PHIL-Nathanson-web.jpg" alt="hanip" />
-                                    <div className="pl-3">
-                                        <div className="text-base font-semibold">Neil Sims</div>
-                                        <div className="font-normal text-gray-500">neil.sims@flowbite.com</div>
-                                    </div>
-                                </th>
-                                <td className="py-4 px-6">
-                                    2 Years
-                                </td>
-                                <td className="py-4 px-6">
-                                UI / UX Designer
-                                </td>
-                                <td className="py-4 px-6">
-                                    $999
-                                </td>
-                                <td className="py-4 px-6">
-                                    <span className="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">90</span>
-                                </td>
-                                <td className="flex items-center py-4 px-6 space-x-3">
-                                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
-                                    <a href="#" className="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
-                                </td>
-                            </tr>
                         </tbody>
+                                  ))
+                                  ) : (
+                                    <p>No Data</p>
+                                  )}
                     </table>
                 </div>
             </div>
 
         </>
-    )
-}
+    );
+};
+export default CardDetailPost;
