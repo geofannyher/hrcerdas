@@ -55,6 +55,31 @@ export default function CardFormPost() {
     console.log(Position)
 
 
+   const Position = []
+   const Place = []
+   const SalaryMax = []
+   const SalaryMin = []
+   const TesRequired = []
+   const Skill = []
+   const JobDescription = []
+   const Essay = []
+   const StartDate = []
+   const EndDate = []
+   const nana = () =>{
+    Position.push(position)
+    Place.push(placementCity)
+    SalaryMin.push(salaryMin)
+    SalaryMax.push(salaryMax)
+    TesRequired.push(tesRequired)
+    Skill.push(skill)
+    JobDescription.push(jobDescription)
+    Essay.push(essay)
+    StartDate.push(startDate)
+    EndDate.push(endDate)
+}
+console.log(Position)
+
+
 
 
     const addLowongan = async token => {
