@@ -4,6 +4,17 @@ import axios from 'axios';
 import {useState,useEffect} from 'react';
 
 export default function CardFormPost() {
+     // Get Token
+   useEffect(() => {
+    if (!sessionStorage.getItem("data")) {
+        navigate("/login");
+    } else {
+        const item = sessionStorage.getItem("data");
+        if (item) {
+            setToken(JSON.parse(item));
+        }
+    }
+   }, []);
 
     // state
    const navigate = useNavigate(); 
@@ -19,38 +30,62 @@ export default function CardFormPost() {
    const [startDate,setStartDate] = useState("");
    const [endDate,setEndDate] = useState("");
 
-    // Get Token
-   useEffect(() => {
-    if (!sessionStorage.getItem("data")) {
-        navigate("/login");
-    } else {
-        const item = sessionStorage.getItem("data");
-        if (item) {
-            setToken(JSON.parse(item));
-        }
-    }
-   }, []);
+const Position = []
+   const Place = []
+   const SalaryMax = []
+   const SalaryMin = []
+   const TesRequired = []
+   const Skill = []
+   const JobDescription = []
+   const Essay = []
+   const StartDate = []
+   const EndDate = []
+   const nana = () =>{
+    Position.push(position)
+    Place.push(placementCity)
+    SalaryMin.push(salaryMin)
+    SalaryMax.push(salaryMax)
+    TesRequired.push(tesRequired)
+    Skill.push(skill)
+    JobDescription.push(jobDescription)
+    Essay.push(essay)
+    StartDate.push(startDate)
+    EndDate.push(endDate)
+}
+console.log(Position)
+
+
+   
 
     const addLowongan = async token => {
-        const body = {
-            position, placementCity, salaryMin, salaryMax, tesRequired,skill, jobDescription, essay, startDate, endDate
-        }
-        console.warn(body)
         await axios
         .post(
             `${process.env.REACT_APP_BASE_URL}/lowonganpekerjaan/create`,
-            body,
+            {
+                position: Position[0],
+                placementCity: Place[0],
+                salarymin:SalaryMin[0],
+                salarymax:SalaryMax[0],
+                tesRequired:TesRequired[0],
+                skill:Skill[0],
+                jobDescription:JobDescription[0],
+                Essay:Essay[0],
+                startdate: StartDate[0],
+                enddate:EndDate[0],
+            },
             { headers: { Authorization: `Bearer ${token}` } }
         )
         .then(res => {
             if (res.status === 200){
-                setLowongan(res.data.data)
+                // setLowongan(res.data.data)
+                console.log('sukses data')
             }
         })
         .catch(err => {
             console.log(err.response.data)
         })
     };
+    
 
     return (
         <>
@@ -128,8 +163,16 @@ export default function CardFormPost() {
                             </div>
                         </li>
                     </ul>
-                    <button type="submit" onClick={() => { addLowongan(token); }}  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Post</button>
                 </form>
+                <button 
+                    type="submit" 
+                    onClick={() => {
+                        nana(); 
+                        addLowongan(token); 
+                        }}  
+                        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Post
+                        </button>
                 </div>
             </div>
         </>
