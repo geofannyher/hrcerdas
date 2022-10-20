@@ -1,5 +1,5 @@
 import { data } from "autoprefixer";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
@@ -81,6 +81,7 @@ export default function CardFormPost() {
                 if (res.status === 200) {
                     // setLowongan(res.data.data)
                     console.log('sukses data')
+                    navigate("/admin/listpost")
                 }
             })
             .catch(err => {
