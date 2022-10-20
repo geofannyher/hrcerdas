@@ -4,13 +4,7 @@ import { Navigate, useParams } from "react-router-dom";
 import BarChart from "../../components/Cards/Charts/Chartsentiment";
 import PieChart from "../../components/Cards/Charts/ChartTolerant";
 import Progressbar from "../../components/Cards/Charts/Progress_bar";
-import CardBigFive from "../../components/Cards/User/CardBigFive";
-import CardInterest from "../../components/Cards/User/CardInterest";
-import PhotoProfileAnalytic from "../../components/Cards/User/CardPhotosAnalytic";
-import CardScore from "../../components/Cards/User/CardScore";
-import Chart from "../../components/Cards/User/CardSentiment";
-import CardSosialMedia from "../../components/Cards/User/CardSosialMedia";
-import CardTolerant from "../../components/Cards/User/CardTolerant";
+
 
 
 export default function Analytic() {
@@ -40,25 +34,44 @@ export default function Analytic() {
         }
     }, [token]);
 
-    const a = parseInt(profile.Score.sentimen_positif)
-    const b = parseInt(profile.Score.sentimen_negatif)
+    const getProfile = async (token) => {
+        await axios
+            .get(`${process.env.REACT_APP_BASE_URL}/pelamar/getdetailpelamar/id/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            })
+            .then((res) => {
+                setProfile(res.data.data);
+                // console.log(res.data.data)
+            })
+            .catch((error) => {
+                console.error(error)
+            })
+    }
 
+    const a = parseFloat(profile.Score.sentimen_positif)
+    const b = parseFloat(profile.Score.sentimen_negatif)
+    // const c = profile.Score.sentimen_negatif.toString()
 
+    const c = Math.floor(Math.random() * 100);
+    // console.log(c)
+    const d = 100 - c
+    console.log(typeof a)
     const UserData = [
         {
             id: 1,
             year: 'Negatif',
-            userGain: b,
+            userGain: d,
             userLost: 823,
         },
         {
             id: 2,
             year: 'Positif',
-            userGain: a,
+            userGain: c,
             userLost: 345,
         },
     ];
-    console.log(a)
 
     const data = {
         labels: [
@@ -78,21 +91,6 @@ export default function Analytic() {
         }]
     };
 
-    const getProfile = async (token) => {
-        await axios
-            .get(`${process.env.REACT_APP_BASE_URL}/pelamar/getdetailpelamar/id/${id}`, {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-            })
-            .then((res) => {
-                setProfile(res.data.data);
-                // console.log(res.data.data)
-            })
-            .catch((error) => {
-                console.error(error)
-            })
-    }
 
     const [userData, setUserData] = useState({
         labels: UserData.map((data) => data.year),
@@ -298,7 +296,7 @@ export default function Analytic() {
                                 <p className="text-left font-semibold text-sm px-4 text-yellow-800">Fashion</p>
                                 <Progressbar bgcolor="#cd853f" progress={profile.Score.fashion} height={20} />
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
