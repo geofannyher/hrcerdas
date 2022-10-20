@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Navigate, useParams } from "react-router-dom";
 import BarChart from "../../components/Cards/Charts/Chartsentiment";
 import PieChart from "../../components/Cards/Charts/ChartTolerant";
+import Progressbar from "../../components/Cards/Charts/Progress_bar";
 import CardBigFive from "../../components/Cards/User/CardBigFive";
 import CardInterest from "../../components/Cards/User/CardInterest";
 import PhotoProfileAnalytic from "../../components/Cards/User/CardPhotosAnalytic";
@@ -69,8 +70,8 @@ export default function Analytic() {
             label: 'My First Dataset',
             data: [a, b],
             backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
+                'rgb(255, 0, 0)',
+                'rgb(65, 105, 255)',
 
             ],
             hoverOffset: 4
@@ -173,7 +174,7 @@ export default function Analytic() {
                     </div>
                 </div>
                 <div className="w-full mb-12 px-4 xl:w-4/12">
-                    <div className='relative flex flex-col min-w-0 break-words w-full mb-6 shadow-md rounded-xl p-4 mt-8 border-solid'>
+                    <div className='relative flex flex-col min-w-0 break-words w-full mb-6 shadow-md rounded-xl p-4 mt-8 border-solid border-gray-900'>
                         <div className='overflow-x-auto relative'>
                             {/* <div className="grid gap-6 mb-10 md:grid-cols-2 mt-12"> */}
                             {profile.sosialMedia !== undefined ? (
@@ -235,14 +236,14 @@ export default function Analytic() {
                 <div className="w-full mb-12 px-4 xl:w-8/12">
                     <div className="relative flex flex-col min-w-0 break-words w-full mb-6 mt-8 shadow-md rounded p-4 ">
                         <p className='text-left text-xl font-bold text-gray-500'>Sentiment Analytic</p>
-                        <p className="text-left text-xs font-semibold text-gray-600 mb-2">Data ini diambil dari jumlah postingan pelamar</p>
+                        <p className="text-left text-xs font-semibold text-gray-600 mb-2">Data ini diambil dari analisis postingan sosial media pelamar</p>
                         <BarChart chartData={userData} />
                     </div>
                 </div>
                 <div className="w-full mb-12 px-4 xl:w-4/12">
                     <div className="relative flex flex-col min-w-0 break-words w-full mb-30 mt-8 shadow-md rounded p-4">
                         <p className='text-left text-xl font-bold text-gray-500'>Tolerant Analisis</p>
-                        <p className="text-left text-xs font-semibold text-gray-600 mb-2">Data ini diambil dari analisis postingan sosial media pelamar</p>
+                        <p className="text-left text-xs font-semibold text-gray-600 mb-2">Data ini diambil dari jumlah postingan pelamar</p>
                         <div className='mb-7'>
                             <PieChart chartData={data} />
                         </div>
@@ -250,33 +251,56 @@ export default function Analytic() {
                 </div>
                 <div className="w-full mb-12 px-4 xl:w-6/12">
                     <div className='relative flex flex-col min-w-0 break-words w-full mb-6 mt-8 shadow-md rounded p-4'>
-                        <div className='m-4'>
-                            <p className='text-left text-xl font-bold text-gray-500'>Personaliy</p>
-                            <div class="mb-1 text-base font-medium dark:text-white">Openness</div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
-                                <div class="bg-gray-600 h-2.5 rounded-full dark:bg-gray-300 w-40"></div>
+                        <div className='m-2'>
+                            <p className='text-left text-xl font-bold text-gray-500 mb-2'>Personality</p>
+                            <p className="text-left text-xs font-semibold text-gray-600 mb-2">Data ini diambil dari Analisis Teori Big Five</p>
+                            <div>
+                                <p className="text-left font-semibold text-sm px-4 text-green-800">Openness</p>
+                                <Progressbar bgcolor="#008000" progress={profile.Score.o} height={20} />
                             </div>
-                            <div class="mb-1 text-base font-medium text-blue-700 dark:text-blue-500">Conscientiousness</div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
-                                <div class="bg-blue-600 h-2.5 rounded-full w-88"></div>
+                            <div>
+                                <p className="text-left font-semibold text-sm px-4 text-red-800">Conscientiousness</p>
+                                <Progressbar bgcolor="#DC143C" progress={profile.Score.c} height={20} />
                             </div>
-                            <div class="mb-1 text-base font-medium text-red-700 dark:text-red-500">ExtraVersion</div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
-                                <div class="bg-red-600 h-2.5 rounded-full dark:bg-red-500 w-20" ></div>
+                            <div>
+                                <p className="text-left font-semibold text-sm px-4 text-blue-800">Extraversion</p>
+                                <Progressbar bgcolor="#4169E1" progress={profile.Score.e} height={20} />
                             </div>
-                            <div class="mb-1 text-base font-medium text-green-700 dark:text-green-500">Agreeableness</div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
-                                <div class="bg-green-600 h-2.5 rounded-full dark:bg-green-500 w-80"></div>
+                            <div>
+                                <p className="text-left font-semibold text-sm px-4 text-yellow-800">Agreeableness</p>
+                                <Progressbar bgcolor="#CD853F" progress={profile.Score.a} height={20} />
                             </div>
-                            <div class="mb-1 text-base font-medium text-yellow-700 dark:text-yellow-500">Neuroticism</div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
-                                <div class="bg-yellow-400 h-2.5 rounded-full w-20" ></div>
+                            <div>
+                                <p className="text-left font-semibold text-sm px-4 text-purple-800">Neuroticism</p>
+                                <Progressbar bgcolor="#7B68EE" progress={profile.Score.n} height={20} />
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="w-full mb-12 px-4 xl:w-6/12">
-                    <CardInterest />
+                    <div className='relative flex flex-col min-w-0 break-words w-full mb-6 mt-8 shadow-md rounded p-4'>
+                        <div className='m-2'>
+                            <p className='text-left text-xl font-bold text-gray-500 mb-2'>Interest</p>
+                            <p className="text-left text-xs font-semibold text-gray-600 mb-2">Data ini diambil dari Klasifikasi Interest sosial media</p>
+                            <div>
+                                <p className="text-left font-semibold text-sm px-4 text-green-800">Travel</p>
+                                <Progressbar bgcolor="#008000" progress={profile.Score.travel} height={20} />
+                            </div>
+                            <div>
+                                <p className="text-left font-semibold text-sm px-4 text-red-800">Food</p>
+                                <Progressbar bgcolor="#800000" progress={profile.Score.food} height={20} />
+                            </div>
+                            <div>
+                                <p className="text-left font-semibold text-sm px-4 text-blue-800">Sport</p>
+                                <Progressbar bgcolor="#000080" progress={profile.Score.sport} height={20} />
+                            </div>
+                            <div className="mb-16">
+                                <p className="text-left font-semibold text-sm px-4 text-yellow-800">Fashion</p>
+                                <Progressbar bgcolor="#cd853f" progress={profile.Score.fashion} height={20} />
+                            </div>
+                            
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
