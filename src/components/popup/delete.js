@@ -23,6 +23,7 @@ const Modal = ({ open, onClose }) => {
             </div>
         </div>
 
+
     )
 }
 

@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { data } from "autoprefixer";
 
 const CardDetailPost = () => {
     const [token, setToken] = useState(null);
-    const [detail, setDetail] = useState({});
-    const [detailp, setDetailProfile] = useState({});
+    const [detail, setDetail] = useState([]);
+    const [detailp, setDetailProfile] = useState([]);
     const param = useParams();
+
 
     // Get TOken
     useEffect(() => {
