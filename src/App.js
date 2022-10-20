@@ -8,8 +8,8 @@ const App = () => {
                 {/* START NAVBAR */}
                 <div class="container flex flex-wrap justify-between items-center mx-auto">
                     <a href="https://flowbite.com/" class="flex items-center">
-                        <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
-                        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                        <img src={`${process.env.PUBLIC_URL}/Logo Biru.png`} class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+                        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">HR Cerdas</span>
 
                     </a>
                     <div className="flex md:order-2">
@@ -164,6 +164,24 @@ const App = () => {
                       </div>
 
                     </div>
+                    {/* END ROW */}
+
+                  </div>
+                </div>
+                {/* END SERVICES */}
+
+                {/* START SERVICES */}
+                <div className="section relative pt-20 pb-8 md:pt-16 md:pb-0 bg-white">
+                  <div className="container xl:max-w-6xl mx-auto px-4">
+                    {/* HEADING START */}
+                    <header className="text-center mx-auto mb-12 lg:px-20">
+                      <h2 className="text-2xl leading-normal mb-2 font-bold text-black">Become a Job Applicant with Us</h2>
+                      <p className="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">Use Our Platform and Find The Benefit</p>
+                    </header>
+                    {/* END HEADER */}
+
+                    {/* START ROW */}
+                    
                     {/* END ROW */}
 
                   </div>
