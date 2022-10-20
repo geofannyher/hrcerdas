@@ -10,8 +10,10 @@ export default function CardEditFormPost() {
         position: { },
         placementCity: {},
         skills: {},
-        salaryMin: {},
-        salaryMax: {},
+        salarymin: {},
+        startdate: {},
+        enddate: {},
+        salarymax: {},
         tesRequired: {},
         jobDescription: {},
         essay: {},
@@ -22,13 +24,13 @@ const navigate = useNavigate();
 const [token,setToken] = useState(null);
 const [position,setPosition] = useState("");
 const [placementCity,setPlacementCity] = useState("");
-const [salaryMin,setSalaryMin] = useState("");
-const [salaryMax,setSalaryMax] = useState("");
+const [salarymin,setSalarymin] = useState("");
+const [salarymax,setSalarymax] = useState("");
 const [tesRequired,setTesRequired] = useState("");
 const [skill,setSkill] = useState("");
 const [jobDescription,setJobDescription] = useState("");
-const [startDate,setStartDate] = useState("");
-const [endDate,setEndDate] = useState("");
+const [startdate,setStartdate] = useState("");
+const [enddate,setEnddate] = useState("");
 const [essay,setEssay] = useState("");
 
 // Get Token
@@ -67,7 +69,7 @@ const getLowongan = async (token) => {
 
 const editLowongan = async token => {
     const body = {
-        position, placementCity, tesRequired, skill, jobDescription, essay, startDate, endDate, salaryMax, salaryMin
+        position, placementCity, tesRequired, skill, jobDescription, essay, startdate, enddate, salarymax, salarymin
     }
     console.warn(body)
     await axios
@@ -111,21 +113,21 @@ const editLowongan = async token => {
                     <div className="grid gap-6 mb-6 md:grid-cols-2">
                         <div>
                         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300" for="user_avatar">Tanggal Lowongan Dibuka</label>
-                            <input type="date" onChange={(e) => setStartDate(e.target.value)} id="first_name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required="" />
+                            <input type="date" onChange={(e) => setStartdate(e.target.value)} id="first_name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required="" />
                         </div>
                         <div>
                         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300" for="user_avatar">Tanggal Lowongan Ditutup</label>
-                            <input type="date" onChange={(e) => setEndDate(e.target.value)} id="first_name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" />
+                            <input type="date" onChange={(e) => setEnddate(e.target.value)} id="first_name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" />
                         </div>
                     </div>
                     <div className="grid gap-6 mb-6 md:grid-cols-2">
                         <div>
                         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300" for="user_avatar">Minimal Gaji</label>
-                            <input type="text" onChange={(e) => setSalaryMin(e.target.value)} id="first_name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required="" />
+                            <input type="text" onChange={(e) => setSalarymin(e.target.value)} id="first_name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required="" />
                         </div>
                         <div>
                         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300" for="user_avatar">Maksimal Gaji</label>
-                            <input type="text" onChange={(e) => setSalaryMax(e.target.value)} id="first_name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" />
+                            <input type="text" onChange={(e) => setSalarymax(e.target.value)} id="first_name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" />
                         </div>
                     </div>
                     <h3 class="mb-4 font-semibold text-gray-900 dark:text-white">Butuh Sertifikasi ?</h3>
