@@ -74,23 +74,20 @@ const CardDetailPost  = () =>{
                         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
                                 <th scope="col" className="py-3 px-6">
-                                    Rank
+                                    Nama
                                 </th>
                                 <th scope="col" className="py-3 px-6">
-                                    Name
+                                    Alasan
                                 </th>
                                 <th scope="col" className="py-3 px-6">
-                                    Status
-                                </th>
-                                <th scope="col" className="py-3 px-6">
-                                    Job Position
+                                    Nomor Hp
                                 </th>
                                 <th scope="col" className="py-3 px-6">
                                     Salary
                                 </th>
                                 <th scope="col" className="py-3 px-6">
                                     Score
-                                </th>
+                                </th> 
                                 <th scope="col" className="py-3 px-6">
                                     Action
                                 </th>
@@ -103,23 +100,20 @@ const CardDetailPost  = () =>{
                                 <th scope="row" className="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap dark:text-white">
                                     <img className="w-10 h-10 rounded-full" src="https://cssh.northeastern.edu/wp-content/uploads/2020/01/PHIL-Nathanson-web.jpg" alt="hanip" />
                                     <div className="pl-3">
-                                        <div className="text-base font-semibold"> {val.alasan} </div>
+                                        <div className="text-base font-semibold"> {val.name} </div>
                                     </div>
                                 </th>
-                                <td className="py-4 px-6">
-                                {val.name}
-                                </td>
                                 <td className="py-4 px-6">
                                 {val.alasan}
                                 </td>
                                 <td className="py-4 px-6">
-                                <span className="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">{val.id_pelamar}</span>
+                                <span className="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-gray-200 dark:text-gray-300">{val.nomer}</span>
                                 </td>
                                 <td className="py-4 px-6">
-                                    <span className="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">{val.id_pelamar}</span>
+                                    <span className="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-500">3.000.000 - 5.000.000</span>
                                 </td>
                                 <td className="py-4 px-6">
-                                    <span className="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">{val.id_pelamar}</span>
+                                    <span className="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">90</span>
                                 </td>
                                 <td className="flex items-center py-4 px-6 space-x-3">
                                     <a href={`/admin/listpost/detailPost/${val.id_pelamar}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
