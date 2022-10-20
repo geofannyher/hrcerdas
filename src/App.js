@@ -175,13 +175,53 @@ const App = () => {
                   <div className="container xl:max-w-6xl mx-auto px-4">
                     {/* HEADING START */}
                     <header className="text-center mx-auto mb-12 lg:px-20">
-                      <h2 className="text-2xl leading-normal mb-2 font-bold text-black">Become a Job Applicant with Us</h2>
-                      <p className="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">Use Our Platform and Find The Benefit</p>
+                      <h2 className="text-2xl leading-normal mb-2 font-bold text-black">Our Services</h2>
+                      <p className="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">Our Company Have a Few Service For You</p>
                     </header>
                     {/* END HEADER */}
 
                     {/* START ROW */}
-                    
+                    <div className="flex flex-wrap flex-row -mx-4 text-center">
+                      <div className="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp" data-wow-duration="1s">
+                        {/* START SERVICE BLOCK */}
+                        <div className="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
+                          <div className="inline-block text-gray-900 mb-4">
+                            {/* ICON */}
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" /></svg>
+                          </div>
+                          <h3 className="text-lg leading-normal mb-2 font-semibold text-black">Fast Tracking</h3>
+                          <p className="text-gray-500">HR Cerdas will be give you fast track to monitoring job applicant on your company</p>
+                        </div>
+                        {/* END SERVICE BLOCK */}
+                      </div>
+
+                      <div className="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp" data-wow-duration="1s">
+                        {/* START SERVICE BLOCK */}
+                        <div className="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
+                          <div className="inline-block text-gray-900 mb-4">
+                            {/* ICON */}
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
+                          </div>
+                          <h3 className="text-lg leading-normal mb-2 font-semibold text-black">Include Test for Job Applicant Requirements</h3>
+                          <p className="text-gray-500">Headhunter have an easy way to choose job applicant with test</p>
+                        </div>
+                        {/* END SERVICE BLOCK */}
+                      </div>
+
+                      <div className="flex-shrink px-4 max-w-full w-full sm:w-1/2 lg:w-1/3 lg:px-6 wow fadeInUp" data-wow-duration="1s">
+                        {/* START SERVICE BLOCK */}
+                        <div className="py-8 px-12 mb-12 bg-gray-50 border-b border-gray-100 transform transition duration-300 ease-in-out hover:-translate-y-2">
+                          <div className="inline-block text-gray-900 mb-4">
+                            {/* ICON */}
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" /></svg>
+                          </div>
+                          <h3 className="text-lg leading-normal mb-2 font-semibold text-black">Best Connected</h3>
+                          <p className="text-gray-500">You can linked with another account like Linkedin and also Facebook</p>
+                        </div>
+                        {/* END SERVICE BLOCK */}
+                      </div>
+
+                    </div>
                     {/* END ROW */}
 
                   </div>
@@ -193,8 +233,8 @@ const App = () => {
                   <div className="container xl:max-w-6xl mx-auto px-4">
                     {/* HEADING START */}
                     <header className="text-center mx-auto mb-12 lg:px-20">
-                      <h2 className="text-2xl leading-normal mb-2 font-bold text-black">Our Tutorial</h2>
-                      <p className="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">Here a Tutorial to Help You Use Our Platform</p>
+                      <h2 className="text-2xl leading-normal mb-2 font-bold text-black">Our Pricing</h2>
+                      <p className="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">Simple, Transparent Pricing for Everyone</p>
                     </header>
                     <div className="flex justify-center">
                       <div className="flex-initial">
