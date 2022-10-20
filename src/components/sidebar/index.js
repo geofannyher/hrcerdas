@@ -3,16 +3,6 @@ const Sidebar = () => {
     <div className="container">
       <aside className="w-64 " aria-label="Sidebar">
         <div className="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto h-auto flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-3 bg-gray-50 rounded dark:bg-gray-800">
-          <a href="https://flowbite.com/" className="flex items-center pl-2.5 mb-5">
-            <img
-              src="https://flowbite.com/docs/images/logo.svg"
-              className="mr-3 h-6 sm:h-7"
-              alt="Flowbite Logo"
-            />
-            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-              HR CERDAS
-            </span>
-          </a>
           <ul className="space-y-2">
             <li>
               <a
@@ -32,7 +22,7 @@ const Sidebar = () => {
                 <span className="ml-3">Dashboard</span>
               </a>
             </li>
-            <li>
+            {/* <li>
               <a
                 href="/admin/listpost"
                 className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
@@ -52,7 +42,7 @@ const Sidebar = () => {
                 </svg>
                 <span className="flex-1 ml-3 whitespace-nowrap">Post Job</span>
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
       </aside>
