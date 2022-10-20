@@ -12,17 +12,21 @@ export default function CardTableListPost() {
     const [openModal, setOpenModal] = useState(false);
     const navigate = useNavigate();
 
-    //  Get Login Data
-    useEffect(() => {
-        if (!sessionStorage.getItem("data")) {
-            navigate("/login");
-        } else {
-            const item = sessionStorage.getItem("data");
-            if (item) {
-                setToken(JSON.parse(item));
-            }
+const handleClickDelete = (id) => {
+    console.log(id)
+}
+
+//  Get Login Data
+useEffect(() => {
+    if (!sessionStorage.getItem("data")) {
+        navigate("/login");
+    } else {
+        const item = sessionStorage.getItem("data");
+        if (item) {
+            setToken(JSON.parse(item));
         }
-    }, []);
+            }
+    },[])
 
     useEffect(() => {
         if (token !== null) {
@@ -136,4 +140,4 @@ export default function CardTableListPost() {
             </div>
         </>
     )
-}
+                            }
