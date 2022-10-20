@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-const CardDetailPost  = () =>{
+const CardDetailPost = () => {
     const [token, setToken] = useState(null);
     const [detail, setDetail] = useState({});
     const [detailp, setDetailProfile] = useState({});
@@ -13,47 +13,47 @@ const CardDetailPost  = () =>{
         const item = sessionStorage.getItem("data");
         if (item) {
             setToken(JSON.parse(item));
-            }
-        }, []);
+        }
+    }, []);
 
     useEffect(() => {
         if (token !== null) {
             getDetail(token);
             getDetailProfile(token);
-            }
-        }, [token]);
-    
+        }
+    }, [token]);
+
 
     const getDetail = async () => {
         await axios
-          .get(`${process.env.REACT_APP_BASE_URL}/lowonganpekerjaan/listpelamar/id/${param.id}`, {
-            headers: { Authorization: `Bearer ${token}` },
-          })
-          .then((res) => {
-            if (res.status === 200) {
-              setDetail(res.data.data);
-              console.log(setDetail)
-            }
-          })
-          .catch((err) => {
-            console.log(err.response.data);
-          });
-      };     
+            .get(`${process.env.REACT_APP_BASE_URL}/lowonganpekerjaan/listpelamar/id/${param.id}`, {
+                headers: { Authorization: `Bearer ${token}` },
+            })
+            .then((res) => {
+                if (res.status === 200) {
+                    setDetail(res.data.data);
+                    console.log(setDetail)
+                }
+            })
+            .catch((err) => {
+                console.log(err.response.data);
+            });
+    };
 
     const getDetailProfile = async () => {
         await axios
-          .get(`${process.env.REACT_APP_BASE_URL}/pelamar/getdetailpelamar/id/${detail.id_pelamar}`, {
-            headers: { Authorization: `Bearer ${token}` },
-          })
-          .then((res) => {
-            if (res.status === 200) {
-              setDetailProfile(res.data.data);
-              console.log(setDetailProfile)
-            }
-          })
-          .catch((err) => {
-            console.log(err.response.data);
-          });
+            .get(`${process.env.REACT_APP_BASE_URL}/pelamar/getdetailpelamar/id/${detail.id_pelamar}`, {
+                headers: { Authorization: `Bearer ${token}` },
+            })
+            .then((res) => {
+                if (res.status === 200) {
+                    setDetailProfile(res.data.data);
+                    console.log(setDetailProfile)
+                }
+            })
+            .catch((err) => {
+                console.log(err.response.data);
+            });
     }
 
     return (
@@ -83,11 +83,8 @@ const CardDetailPost  = () =>{
                                     Nomor Hp
                                 </th>
                                 <th scope="col" className="py-3 px-6">
-                                    Salary
-                                </th>
-                                <th scope="col" className="py-3 px-6">
                                     Score
-                                </th> 
+                                </th>
                                 <th scope="col" className="py-3 px-6">
                                     Action
                                 </th>
@@ -95,36 +92,40 @@ const CardDetailPost  = () =>{
                         </thead>
                         {detail.length > 0 ? (
                             detail.map(val => (
-                        <tbody>
-                            <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                                <th scope="row" className="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap dark:text-white">
-                                    <img className="w-10 h-10 rounded-full" src="https://cssh.northeastern.edu/wp-content/uploads/2020/01/PHIL-Nathanson-web.jpg" alt="hanip" />
-                                    <div className="pl-3">
-                                        <div className="text-base font-semibold"> {val.name} </div>
-                                    </div>
-                                </th>
-                                <td className="py-4 px-6">
-                                {val.alasan}
-                                </td>
-                                <td className="py-4 px-6">
-                                <span className="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-gray-200 dark:text-gray-300">{val.nomer}</span>
-                                </td>
-                                <td className="py-4 px-6">
-                                    <span className="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-500">3.000.000 - 5.000.000</span>
-                                </td>
-                                <td className="py-4 px-6">
-                                    <span className="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">90</span>
-                                </td>
-                                <td className="flex items-center py-4 px-6 space-x-3">
-                                    <a href={`/admin/listpost/detailPost/${val.id_pelamar}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
-                                    <a href={`/admin/analytic/${val.id_pelamar}`} className="font-medium text-green-600 dark:text-green-500 hover:underline">Analytic</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                                  ))
-                                  ) : (
-                                    <p>No Data</p>
-                                  )}
+                                <tbody>
+                                    <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                                        <th scope="row" className="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap dark:text-white">
+                                            <img className="w-10 h-10 rounded-full" src="https://cssh.northeastern.edu/wp-content/uploads/2020/01/PHIL-Nathanson-web.jpg" alt="hanip" />
+                                            <div className="pl-3">
+                                                <div className="text-base font-semibold"> {val.name} </div>
+                                            </div>
+                                        </th>
+                                        <td className="py-4 px-6">
+                                            {val.alasan}
+                                        </td>
+                                        <td className="py-4 px-6">
+                                            <span className="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-gray-200 dark:text-gray-300">{val.nomer}</span>
+                                        </td>
+
+                                        <td className="py-4 px-6">
+                                            <span className="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">{val.score_utama}</span>
+                                        </td>
+                                        <td className="flex items-center py-4 px-6 space-x-3">
+                                            <a href={`/admin/listpost/detailPost/${val.id_pelamar}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+                                                <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z" />
+                                                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z" />
+                                            </svg></a>
+                                            <a href={`/admin/analytic/${val.id_pelamar}`} className="font-medium text-gray-600 dark:text-gray-500 hover:underline"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard2-data-fill" viewBox="0 0 16 16">
+                                                <path d="M10 .5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5.5.5 0 0 1-.5.5.5.5 0 0 0-.5.5V2a.5.5 0 0 0 .5.5h5A.5.5 0 0 0 11 2v-.5a.5.5 0 0 0-.5-.5.5.5 0 0 1-.5-.5Z" />
+                                                <path d="M4.085 1H3.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1h-.585c.055.156.085.325.085.5V2a1.5 1.5 0 0 1-1.5 1.5h-5A1.5 1.5 0 0 1 4 2v-.5c0-.175.03-.344.085-.5ZM10 7a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V7Zm-6 4a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1Zm4-3a1 1 0 0 1 1 1v3a1 1 0 1 1-2 0V9a1 1 0 0 1 1-1Z" />
+                                            </svg></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            ))
+                        ) : (
+                            <p>No Data</p>
+                        )}
                     </table>
                 </div>
             </div>

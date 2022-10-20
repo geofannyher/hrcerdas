@@ -59,10 +59,10 @@ export default function Dashboard() {
         <>
             <div className="flex flex-wrap">
                 <div className="w-full px-4">
-                    {/* <HeaderStats /> */}
+                    <HeaderStats />
                 </div>
                 <div className="w-full mb-12 px-12 xl:w-12/12 items-center">
-                    <CardTableListPost />
+                    <CardTablePelamar />
                 </div>
                 {/* <div className="w-full mb-12 px-4 xl:w-3/12">
                     <CardLineChart />

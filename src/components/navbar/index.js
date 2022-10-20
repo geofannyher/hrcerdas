@@ -11,14 +11,15 @@ const Navbar = () => {
       <header>
         <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 shadow-sm rounded dark:bg-gray-900">
           <div className="container flex flex-wrap justify-between items-center mx-auto">
-            <Link to="/" className="flex items-center">
+            <div className="mr-3 h-6 sm:h-9"></div>
+            {/* <Link to="/" className="flex items-center">
               <img
                 src={`${process.env.PUBLIC_URL}/HRCerdas.png`}
                 className="mr-3 h-6 sm:h-9"
                 alt="HRCerdas Logo"
               />
   
-            </Link>
+            </Link> */}
             <div className="flex items-center lg:order-2">
               {!sessionStorage.getItem("data") ? (
                 <div className="flex justify-center">
