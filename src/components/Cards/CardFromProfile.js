@@ -74,7 +74,7 @@ export default function CardProfile() {
             )
             .then(res => {
                 if (res.status === 200) {
-                    // navigate("/admin/profile")
+                    navigate("/admin/profile")
                     console.log("data sukses di edit")
                 }
 

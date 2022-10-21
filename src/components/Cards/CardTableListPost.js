@@ -12,21 +12,21 @@ export default function CardTableListPost() {
     const [openModal, setOpenModal] = useState(false);
     const navigate = useNavigate();
 
-const handleClickDelete = (id) => {
-    console.log(id)
-}
 
-//  Get Login Data
-useEffect(() => {
-    if (!sessionStorage.getItem("data")) {
-        navigate("/login");
-    } else {
-        const item = sessionStorage.getItem("data");
-        if (item) {
-            setToken(JSON.parse(item));
-        }
+
+    //  Get Login Data
+    useEffect(() => {
+        if (!sessionStorage.getItem("data")) {
+            navigate("/login");
+        } else {
+            const item = sessionStorage.getItem("data");
+            if (item) {
+                setToken(JSON.parse(item));
             }
-    },[])
+        }
+
+    }, []);
+
 
     useEffect(() => {
         if (token !== null) {
@@ -117,14 +117,9 @@ useEffect(() => {
 
                                             <button onClick={() => setOpenModal(true)}
                                                 type="button" class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 focus:outline-none dark:focus:ring-red-800" data-modal-toggle="modalId" aria-hidden="true" data-modal-show="true"    >Delete</button>
-                                            {
-                                                openModal ? (
-                                                    <Delete open={openModal} onClose={() => setOpenModal(false)} />
-                                                ) : null
-                                            }
-
-
                                             {/* {openModal && <Delete closeModal={setOpenModal}/> } */}
+                                            <Delete open={openModal} onCLose={() => setOpenModal(false)} />
+
                                             <a href={`/admin/listpost/detailPost/${val._id}`}>
                                                 <button type="button" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 focus:outline-none dark:focus:ring-green-800">Detail</button>
                                             </a>

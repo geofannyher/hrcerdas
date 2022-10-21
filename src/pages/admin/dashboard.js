@@ -62,7 +62,7 @@ export default function Dashboard() {
                     <HeaderStats />
                 </div>
                 <div className="w-full mb-12 px-12 xl:w-12/12 items-center">
-                    <CardTablePelamar />
+                    <CardTableListPost />
                 </div>
                 {/* <div className="w-full mb-12 px-4 xl:w-3/12">
                     <CardLineChart />
