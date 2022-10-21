@@ -14,6 +14,7 @@ export default function Analytic() {
         DetailProfil: {},
         Score: {},
         sosialMedia: {},
+
     })
     const { id } = useParams();
 
@@ -143,8 +144,15 @@ export default function Analytic() {
             <div className="flex flex-wrap px-12">
                 <div className="w-full mb-12 px-2 xl:w-4/12 items-center">
                     <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-md rounded-lg bg-blueGray-100 border-0 mt-8">
-
-                        <img className="w-40 h-40 rounded-full self-center mt-8" src="https://cdn1-production-images-kly.akamaized.net/Sn5EjcEhFI-jWocCljrP7CZRwyw=/1200x900/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/1439641/original/042027300_1482131661-reddit.jpg" alt="Rounded avatar" />
+                        {profile.img !== undefined ? (
+                            <div>
+                                <img className="w-40 h-40 rounded-full self-center mt-8" src={`${profile.img}`} alt="Rounded avatar" />
+                            </div>
+                        ) : (
+                            <div>
+                                <img className="w-40 h-40 rounded-full self-center mt-8" src="https://awsimages.detik.net.id/content/2015/01/14/1340/iimrusyamsiprofile.jpg" alt="Rounded avatar" />
+                            </div>
+                        )}
                         <h4 className="text-center font-bold mt-4 mb-2">{`${profile.name.first_name}`} {`${profile.name.last_name}`} </h4>
                         {profile.DetailProfil === undefined ? (
                             <div>
@@ -156,7 +164,23 @@ export default function Analytic() {
                             <div>
                                 <p className="text-center font-semibold text-sm text-gray-400 mb-2">{`${profile.DetailProfil.gender}`}</p>
                                 <p className="text-center font-semibold text-sm text-gray-400 mb-2">{`${profile.DetailProfil.residentialStatus}`}</p>
-                                <p className="text-center font-semibold text-sm text-gray-400 mb-10">{`${profile.DetailProfil.location}`} , {`${profile.DetailProfil.nationality}`}</p>
+                                <p className="text-center font-semibold text-sm text-gray-400 mb-2">{`${profile.DetailProfil.location}`} , {`${profile.DetailProfil.nationality}`}</p>
+                            </div>
+                        )}
+                        <p className="text-center font-semibold text-sm text-gray-400 mb-2">Skills</p>
+                        {profile.skills !== undefined ? (
+                            <div className="flex flex-auto text-center">
+                                <div className="grid grid-cols-4 gap-4 mb-12 w-full m-4">
+                                    {profile.skills.map(val => (
+                                        <div className="flex flex-auto items-center">
+                                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-5 py-2 rounded-full dark:bg-blue-200 dark:text-blue-800 m-2">{val}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        ) : (
+                            <div>
+                                Tidak Ditemukan Skills
                             </div>
                         )}
 
