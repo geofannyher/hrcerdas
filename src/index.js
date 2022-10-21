@@ -10,9 +10,6 @@ import NotFound from "./pages/error/404";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
-import Layout from "./layouts";
-import Navbar from "./components/navbar";
-import Footer from "./components/footer";
 import Detail from "./pages/dashboard/detail";
 import Admin from "./pages/admin/dashboard";
 import Profile from "./pages/admin/profile";
@@ -24,26 +21,26 @@ import EditPost from "./pages/admin/editpost";
 import DetailPost from "./pages/admin/detailpost";
 import Analytic from "./pages/admin/analytic";
 import Chart from "./components/Cards/User/CardSentiment";
+import UserLayout from "./layouts";
+import Navbar from "./components/navbar";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      {/* <Navbar /> */}
+      <Navbar />
       <Routes>
         {/* Auth Start */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<Forgot />} />
-        {/* Auth End */}
 
         {/* error page */}
         <Route path="*" element={<NotFound />} />
-        <Route index element={<App />} />
 
         {/* layouts */}
-        <Route path="/" element={<Layout />}>
+        <Route element={<UserLayout />} >
           <Route path="/admin" element={<Admin />} />
           <Route path="/analitik" element={<Chart />} />
           <Route path="/detail" element={<Detail />} />
@@ -56,6 +53,7 @@ root.render(
           <Route path="/admin/profile" element={<Profile />} />
           <Route path="/admin/profile/edit" element={<EditProfile />} />
         </Route>
+        <Route index element={<App />} />
       </Routes>
       {/* <Footer /> */}
     </BrowserRouter>
