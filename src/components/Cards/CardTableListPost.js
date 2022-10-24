@@ -2,7 +2,6 @@ import { faWindowRestore } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import { useEffect, useState } from "react";
 import { useNavigate, useRouteLoaderData } from 'react-router-dom';
-import Delete from '../../components/popup/delete';
 
 export default function CardTableListPost() {
 
