@@ -19,7 +19,7 @@ export default function CardProfile() {
     const [email, setEmail] = useState("");
     const [website, setWebsite] = useState("");
     const [deskripsi, setDeskripsi] = useState("");
-    const [capacity, setCapacity] = useState("");
+    const [Capacity, setCapacity] = useState("");
     const [industryCategory, setindustryCategory] = useState("");
 
 
@@ -63,7 +63,7 @@ export default function CardProfile() {
     const updateProfile = async token => {
 
         const body = {
-            alamat, email, website, deskripsi
+            alamat, email, website, deskripsi, Capacity, industryCategory
         }
         console.warn(body)
         await axios
@@ -84,29 +84,7 @@ export default function CardProfile() {
             })
     };
 
-    const updateProfile2 = async token => {
 
-        const body = {
-            capacity, industryCategory
-        }
-        console.warn(body)
-        await axios
-            .put(
-                `${process.env.REACT_APP_BASE_URL}/detailperusahaan/detailprofile`,
-                body,
-                { headers: { Authorization: `Bearer ${token}` } }
-            )
-            .then(res => {
-                if (res.status === 200) {
-                    navigate("/admin/profile")
-                    console.log("data sukses di edit")
-                }
-
-            })
-            .catch(err => {
-                console.log(err.response.data)
-            })
-    }
 
     return (
         <>
@@ -123,6 +101,7 @@ export default function CardProfile() {
                 <form
                     onSubmit={e => {
                         updateProfile(token);
+                        // updateProfile2(token);
                         e.preventDefault();
                     }}>
                     <div className="grid gap-6 mb-6 md:grid-cols-2 m-6">
@@ -156,19 +135,19 @@ export default function CardProfile() {
                         </div>
                         <div>
                             <label htmlFor="employes" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Total Employes</label>
-                            {profile.DetailProfile !== undefined ? (
+                            {profile.DetailBasicPerusahaan !== undefined ? (
                                 <div>
-                                    <input type="text" id="employes" defaultValue={profile.DetailProfile.capacity} onChange={e => setCapacity(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder=" 0 - 2000000" required/>
+                                    <input type="text" id="employes" defaultValue={profile.DetailBasicPerusahaan.capacity} onChange={e => setCapacity(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder=" 0 - 2000000" required />
                                 </div>
                             ) : (
                                 <div>
-                                    <input type="text" id="employes" onChange={e => setCapacity(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="0 - 2000000" required/>
+                                    <input type="text" id="employes" onChange={e => setCapacity(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="0 - 2000000" required />
                                 </div>
                             )}
                         </div>
                         <div>
                             <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email address</label>
-                            <input type="email" defaultValue={profile.email} onChange={e => setEmail(e.target.value)} id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="john.doe@company.com" required/>
+                            <input type="email" defaultValue={profile.email} onChange={e => setEmail(e.target.value)} id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="john.doe@company.com" required />
                         </div>
                         {/* <div>
                             <label htmlFor="city" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">City</label>
@@ -182,13 +161,13 @@ export default function CardProfile() {
                         </div> */}
                         <div>
                             <label htmlFor="industry_category" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Industry Category</label>
-                            {profile.DetailProfile !== undefined ? (
+                            {profile.DetailBasicPerusahaan !== undefined ? (
                                 <div>
-                                    <input id="industry_category" type="text" defaultValue={profile.DetailProfile.industrycategory} onChange={e => setindustryCategory(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
+                                    <input id="industry_category" type="text" defaultValue={profile.DetailBasicPerusahaan.industrycategory} onChange={e => setindustryCategory(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
                                 </div>
                             ) : (
                                 <div>
-                                    <input id="industry_category" type="text" onChange={e => setindustryCategory(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
+                                    <input id="industry_category" type="text" onChange={e => setindustryCategory(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
                                 </div>
                             )}
                         </div>
@@ -196,7 +175,7 @@ export default function CardProfile() {
                             <div>
                                 <div>
                                     <label htmlFor="adress" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Company Address</label>
-                                    <input type="text" id="address" defaultValue={profile.DetailBasicPerusahaan.alamat} onChange={e => setAlamat(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Panorama street" required/>
+                                    <input type="text" id="address" defaultValue={profile.DetailBasicPerusahaan.alamat} onChange={e => setAlamat(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Panorama street" required />
                                 </div>
                                 <div>
                                     <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Company Description</label>
@@ -207,7 +186,7 @@ export default function CardProfile() {
                             <div>
                                 <div>
                                     <label htmlFor="adress" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Company Address</label>
-                                    <input type="text" id="address" onChange={e => setAlamat(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Panorama street" required/>
+                                    <input type="text" id="address" onChange={e => setAlamat(e.target.value)}  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Panorama street" required />
                                 </div>
                                 <div>
                                     <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Company Description</label>
