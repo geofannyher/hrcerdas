@@ -8,7 +8,7 @@ const Sidebar = () => {
           <Link to="/" className="flex flex-auto items-center">
             <img
               src={`${process.env.PUBLIC_URL}/HRCerdas.png`}
-              className="mr-3 h-6 sm:h-9"
+              className="mr-3 h-6 ml-2 sm:h-9"
               alt="HRCerdas Logo"
             />
             </Link>
