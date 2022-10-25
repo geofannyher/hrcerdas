@@ -23,7 +23,7 @@ function CardTolerant() {
 
     return (
         <div className="App">
-            <div className="relative flex flex-col min-w-0 break-words w-full mb-30 mt-8 shadow-md rounded p-4">
+            <div className="relative flex flex-col min-w-0 break-words w-full mb-2 shadow-md rounded p-4">
                 <div className='mb-7'>
                     <PieChart chartData={data} />
                 </div>

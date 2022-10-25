@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CardTableListPost from "../../components/Cards/CardTableListPost"
 import CardTablePelamar from "../../components/Cards/CardTablePelamar";
+import CardTolerant from "../../components/Cards/User/CardTolerant";
 import HeaderStats from "../../components/HeaderStats.js/HeaderStasts";
 
 
@@ -32,26 +33,26 @@ export default function Dashboard() {
         }
     }, [local]);
 
-    
+
 
     useEffect(() => {
-        if (local !== null){
+        if (local !== null) {
             getProfile();
         }
     }, [local]);
     const getProfile = async () => {
         await axios
-        .get(`${process.env.REACT_APP_BASE_URL}/hr/profile`, {
-            headers: { Authorization: `Bearer ${local}`},
-        })
-        .then(res => {
-            if (res.status === 200) {
-                setProfile(res.data.data);
-            }
-        })
-        .catch(err => {
-            console.log(err.response.data);
-        });
+            .get(`${process.env.REACT_APP_BASE_URL}/hr/profile`, {
+                headers: { Authorization: `Bearer ${local}` },
+            })
+            .then(res => {
+                if (res.status === 200) {
+                    setProfile(res.data.data);
+                }
+            })
+            .catch(err => {
+                console.log(err.response.data);
+            });
     };
 
 
@@ -61,7 +62,8 @@ export default function Dashboard() {
                 <div className="w-full px-4">
                     <HeaderStats />
                 </div>
-                <div className="w-full mb-12 px-12 xl:w-12/12 mt-8 m-4 items-center">
+                
+                <div className="w-full mb-12 px-12 xl:w-12/12 mt-8 m-4 mx-5 items-center">
                     <CardTablePelamar />
                 </div>
                 {/* <div className="w-full mb-12 px-4 xl:w-3/12">

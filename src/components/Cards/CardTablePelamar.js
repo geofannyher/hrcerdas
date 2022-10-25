@@ -4,7 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 const AllLowongan = () => {
     const [token, setToken] = useState(null);
-    const [lowongan, setLowongan] = useState({});
+    const [lowongan, setLowongan] = useState({
+
+    });
     // const [openModal, setOpenModal] = useState(false);
     const navigate = useNavigate();
 
@@ -65,10 +67,7 @@ const AllLowongan = () => {
                                 Status
                             </th>
                             <th scope="col" className="py-3 px-6">
-                                Job Position
-                            </th>
-                            <th scope="col" className="py-3 px-6">
-                                Salary
+                                Alasan
                             </th>
                             <th scope="col" className="py-3 px-6">
                                 Score
@@ -80,26 +79,23 @@ const AllLowongan = () => {
                     </thead>
                     <tbody>
                         {lowongan.length > 0 ? (
-                            lowongan.map(val => (
+                            lowongan[0].map(val => (
                                 <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                                     <th scope="row" className="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap dark:text-white">
-                                        <img className="w-10 h-10 rounded-full" src="https://cssh.northeastern.edu/wp-content/uploads/2020/01/PHIL-Nathanson-web.jpg" alt="hanip" />
+                                        <img className="w-10 h-10 rounded-full" src={val.profile} alt="hanip" />
                                         <div className="pl-3">
                                             <div className="text-base font-semibold">{val.name}</div>
                                             <div className="font-normal text-gray-500">{val.nomer}</div>
                                         </div>
                                     </th>
                                     <td className="py-4 px-6">
-                                        {val.name}
+                                        <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">Pending</span>
                                     </td>
                                     <td className="py-4 px-6">
                                         {val.alasan}
                                     </td>
                                     <td className="py-4 px-6">
-                                        $2999
-                                    </td>
-                                    <td className="py-4 px-6">
-                                        <span className="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">90</span>
+                                        <span className="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">{val.score_utama}</span>
                                     </td>
                                     <td className="flex items-center py-4 px-6 space-x-3">
                                         <a href="admin/detail" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
