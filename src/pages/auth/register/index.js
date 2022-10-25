@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Register() {
@@ -13,6 +13,13 @@ function Register() {
   const [namaPerusahaan, setPerusahaan] = useState("")
 
   const navigate = useNavigate();
+
+    // Security
+    useEffect(() => {
+      if (sessionStorage.getItem("data")) {
+          navigate("/admin")
+      }
+  }, []);
 
   const handleSubmit = async () => {
     // console.log({firstName, lastName, username,email,password,confirmPassword,phone})
