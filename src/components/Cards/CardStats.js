@@ -31,7 +31,7 @@ export default function CardStats({
                   statIconColor
                 }
               >
-                <i className={statIconName}></i>
+                {statIconName}
               </div>
             </div>
           </div>

@@ -33,6 +33,7 @@ const AllLowongan = () => {
             })
             .then((res) => {
                 setLowongan(res.data.data);
+                console.log(res.data.data)
             })
             .catch((error) => {
                 console.error(error);
