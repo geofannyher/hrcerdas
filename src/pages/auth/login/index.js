@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Alert from "../../../components/alert";
 const Login = () => {
@@ -10,6 +10,14 @@ const Login = () => {
   const [alertMsg, setAlertMsg] = useState("");
   // Navigation
   const navigate = useNavigate();
+
+
+  // Security
+  useEffect(() => {
+    if (sessionStorage.getItem("data")) {
+        navigate("/admin")
+    }
+}, []);
 
   // Submit form
   const handleSubmit = async () => {
