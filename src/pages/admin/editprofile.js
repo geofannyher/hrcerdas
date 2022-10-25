@@ -30,10 +30,7 @@ export default function EditProfile() {
                 </nav>
             {/* </div> */}
             <div className="flex flex-wrap mx-10">
-                <div className="w-full px-4  xl:w-4/12">
-                    <FormPassword />
-                </div>
-                <div className="w-full px-4 xl:w-8/12">
+                <div className="w-full px-4 xl:w-12/12 ">
                     <CardProfile />
                 </div>
             </div>
