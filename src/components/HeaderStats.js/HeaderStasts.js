@@ -7,11 +7,11 @@ export default function HeaderStats() {
   return (
     <>
       {/* Header */}
-      <div className="relative bg-lightBlue-600 md:pt-2 pb-2 pt-2">
-        {/* <div className="px-4 md:px-10 mx-auto w-full">
-          <div> */}
+      <div className="relative bg-lightBlue-600 md:pt-4 pb-4 pt-4">
+        <div className="px-4 md:px-10 mx-auto w-full">
+          <div>
             {/* Card stats */}
-            {/* <div className="flex flex-wrap">
+            <div className="flex flex-wrap">
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats
                   statSubtitle="Total Job Applicant"
@@ -60,9 +60,9 @@ export default function HeaderStats() {
                   statIconColor="bg-blue-500"
                 />
               </div>
-            </div> */}
-          {/* </div>
-        </div> */}
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
