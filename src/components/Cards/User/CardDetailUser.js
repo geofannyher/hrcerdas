@@ -67,7 +67,7 @@ export default function Detail() {
                         </div>
                         <div>
                             <label for="last_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Last name</label>
-                            <input type="text" id="last_name" defaultValue={profile.name.last_name}  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Doe" disabled />
+                            <input type="text" id="last_name" defaultValue={profile.name.last_name} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Doe" disabled />
                         </div>
                         <div>
                             <label for="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email address</label>
@@ -79,7 +79,7 @@ export default function Detail() {
                         </div>
                         <div>
                             <label for="birth" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Birth of Date</label>
-                            <input type="text" id="birth" defaultValue= {profile.DetailProfil.tanggalLahir} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="flowbite.com" disabled />
+                            <input type="text" id="birth" defaultValue={profile.DetailProfil.tanggalLahir} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="flowbite.com" disabled />
                         </div>
                         <div>
                             <label for="gender" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Gender</label>
@@ -102,7 +102,7 @@ export default function Detail() {
                         </div>
                         <div>
                             <label for="linkedin" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">linkedin Username</label>
-                            <input type="text" id="linkedin"defaultValue={profile.sosialMedia.linkedin}  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Hanif-Satrio" disabled />
+                            <input type="text" id="linkedin" defaultValue={profile.sosialMedia.linkedin} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Hanif-Satrio" disabled />
 
                         </div>
                         <div>
