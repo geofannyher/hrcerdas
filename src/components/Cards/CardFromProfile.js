@@ -94,7 +94,7 @@ export default function CardProfile() {
             <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-md rounded-lg bg-blueGray-100 border-0 mt-8">
                 <div className="rounded-t bg-white mb-0 px-6 py-6">
                     <div className="text-center flex justify-between">
-                        <h6 className="text-blueGray-700 text-xl font-bold">Setting Account</h6>
+                        <h6 className="text-blueGray-700 text-xl font-bold">Pengaturan Akun</h6>
                     </div>
                 </div>
 
@@ -122,32 +122,32 @@ export default function CardProfile() {
                             <input type="tel" id="phone"  disabled className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="0852-3365-2544" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
                         </div> */}
                         <div>
-                            <label htmlFor="website" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Website URL</label>
+                            <label htmlFor="website" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Link Website Perusahaan</label>
                             {profile.DetailBasicPerusahaan !== undefined ? (
                                 <div>
-                                    <input type="text" defaultValue={profile.DetailBasicPerusahaan.website} onChange={e => setWebsite(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Input Your Company Website URL" required />
+                                    <input type="text" defaultValue={profile.DetailBasicPerusahaan.website} onChange={e => setWebsite(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Masukkan Link Website..." required />
                                 </div>
                             ) : (
                                 <div>
-                                    <input type="text" onChange={e => setWebsite(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Input Your Company Website URL" required />
+                                    <input type="text" onChange={e => setWebsite(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Masukkan Link Website..." required />
                                 </div>
                             )}
                         </div>
                         <div>
-                            <label htmlFor="employes" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Total Employes</label>
+                            <label htmlFor="employes" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Total Pegawai</label>
                             {profile.DetailBasicPerusahaan !== undefined ? (
                                 <div>
-                                    <input type="text" id="employes" defaultValue={profile.DetailBasicPerusahaan.capacity} onChange={e => setCapacity(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Input Your Total Employee" required />
+                                    <input type="text" id="employes" defaultValue={profile.DetailBasicPerusahaan.capacity} onChange={e => setCapacity(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Masukkan Total Pegawai Perusahaan..." required />
                                 </div>
                             ) : (
                                 <div>
-                                    <input type="text" id="employes" onChange={e => setCapacity(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="0 - 2000000" required />
+                                    <input type="text" id="employes" onChange={e => setCapacity(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Masukkan Total Pegawai Perusahaan..." required />
                                 </div>
                             )}
                         </div>
                         <div>
-                            <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email address</label>
-                            <input type="email" defaultValue={profile.email} onChange={e => setEmail(e.target.value)} id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Input Your Company Email" required />
+                            <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Alamat Email</label>
+                            <input type="email" defaultValue={profile.email} onChange={e => setEmail(e.target.value)} id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Masukkan Alamat Email Perusahaan" required />
                         </div>
                         {/* <div>
                             <label htmlFor="city" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">City</label>
@@ -160,37 +160,37 @@ export default function CardProfile() {
                             </select>
                         </div> */}
                         <div>
-                            <label htmlFor="industry_category" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Industry Category</label>
+                            <label htmlFor="industry_category" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Kategori Perusahaan</label>
                             {profile.DetailBasicPerusahaan !== undefined ? (
                                 <div>
-                                    <input id="industry_category" type="text" defaultValue={profile.DetailBasicPerusahaan.industrycategory} onChange={e => setindustryCategory(e.target.value)} placeholder="Input Your Industry Category" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                                    <input id="industry_category" type="text" defaultValue={profile.DetailBasicPerusahaan.industrycategory} onChange={e => setindustryCategory(e.target.value)} placeholder="Masukkan Kategori Perusahaan..." className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
                                 </div>
                             ) : (
                                 <div>
-                                    <input id="industry_category" type="text" onChange={e => setindustryCategory(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+                                    <input id="industry_category" type="text" onChange={e => setindustryCategory(e.target.value)} placeholder="Masukkan Kategori Perusahaan..." className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
                                 </div>
                             )}
                         </div>
                         {profile.DetailBasicPerusahaan !== undefined ? (
                             <div>
                                 <div>
-                                    <label htmlFor="adress" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Company Address</label>
-                                    <input type="text" id="address" defaultValue={profile.DetailBasicPerusahaan.alamat} onChange={e => setAlamat(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Input Your Company Address" required />
+                                    <label htmlFor="adress" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Alamat Perusahaan</label>
+                                    <input type="text" id="address" defaultValue={profile.DetailBasicPerusahaan.alamat} onChange={e => setAlamat(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Masukkan Alamat Perusahaan" required />
                                 </div>
                                 <div>
-                                    <label htmlFor="message" className="block mb-2 mt-4 text-sm font-medium text-gray-900 dark:text-gray-400">Company Description</label>
-                                    <textarea id="message" rows="4" cols="6" defaultValue={profile.DetailBasicPerusahaan.deskripsi} onChange={e => setDeskripsi(e.target.value)} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Input Your Company Description" required></textarea>
+                                    <label htmlFor="message" className="block mb-2 mt-4 text-sm font-medium text-gray-900 dark:text-gray-400">Deskripsi Perusahaan</label>
+                                    <textarea id="message" rows="4" cols="6" defaultValue={profile.DetailBasicPerusahaan.deskripsi} onChange={e => setDeskripsi(e.target.value)} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Masukkan Deskripsi Perusahaan..." required></textarea>
                                 </div>
                             </div>
                         ) : (
                             <div>
                                 <div>
-                                    <label htmlFor="adress" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Company Address</label>
-                                    <input type="text" id="address" onChange={e => setAlamat(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Input Your Company Address" required />
+                                    <label htmlFor="adress" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Alamat Perusahaan</label>
+                                    <input type="text" id="address" onChange={e => setAlamat(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Masukkan Alamat Perusahaan" required />
                                 </div>
                                 <div>
-                                    <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Company Description</label>
-                                    <textarea id="message" rows="4" cols="6" onChange={e => setDeskripsi(e.target.value)} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Input Your Company Address" required></textarea>
+                                    <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Deskripsi Perusahaan</label>
+                                    <textarea id="message" rows="4" cols="6" onChange={e => setDeskripsi(e.target.value)} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Masukkan Deskripsi Perusahaan..." required></textarea>
                                 </div>
                             </div>
                         )}
