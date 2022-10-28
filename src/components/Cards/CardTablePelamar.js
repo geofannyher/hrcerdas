@@ -42,6 +42,7 @@ const AllLowongan = () => {
             });
     };
 
+    const val = [];
 
     return (
 
@@ -78,9 +79,11 @@ const AllLowongan = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {lowongan.length > 0 ? (
-                            lowongan[0].map(val => (
-                                <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                        {
+                        lowongan.length > 0 ? (
+                            lowongan.map((tes) => (
+                                tes.map(val => (
+                                    <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                                     <th scope="row" className="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap dark:text-white">
                                         <img className="w-10 h-10 rounded-full" src={val.profile} alt="hanip" />
                                         <div className="pl-3">
@@ -108,6 +111,9 @@ const AllLowongan = () => {
                                         </svg></a>
                                     </td>
                                 </tr>
+                                ))
+                            
+                                
                             ))
                         ) : (
                             <p>No Data</p>
