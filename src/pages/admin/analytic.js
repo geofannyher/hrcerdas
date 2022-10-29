@@ -186,9 +186,8 @@ export default function Analytic() {
                                 </div>
                             ) : (
 
-                                <div className="text-center text-red-500">
-
-                                    Tidak Ditemukan Skills
+                                <div className="text-center  text-red-500">
+                                    <p className="text-semibold ">Tidak Ditemukan Skills</p>
                                 </div>
                             )}
 
