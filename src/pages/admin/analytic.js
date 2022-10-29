@@ -152,7 +152,7 @@ export default function Analytic() {
                             ) : (
                                 <div className="flex flex-auto self-center">
 
-                                    <img className="w-30 h-30 rounded-full self-center " src="https://awsimages.detik.net.id/content/2015/01/14/1340/iimrusyamsiprofile.jpg" alt="Rounded avatar" />
+                                    <img className="w-30 h-30 rounded-full self-center " src={`${process.env.PUBLIC_URL}/Logo Biru.png`} alt="Rounded avatar" />
                                 </div>
                             )}
                         </div>
