@@ -157,21 +157,21 @@ export default function Analytic() {
                             )}
                         </div>
                         <div className="xl:w-7/12 mt-4 self-center">
-                            <h4 className="text-left font-bold mt-4 mb-2">Nama Lengkap : {`${profile.name.first_name}`} {`${profile.name.last_name}`} </h4>
+                            <h4 className="text-left font-bold mt-4 mb-2 mx-2">Nama Lengkap : {`${profile.name.first_name}`} {`${profile.name.last_name}`} </h4>
                             {profile.DetailProfil === undefined ? (
                                 <div>
-                                    <p className="text-left font-semibold text-sm text-gray-400 mb-2">User Belum Menginputkan Gender</p>
-                                    <p className="text-left font-semibold text-sm text-gray-400 mb-2">User Belum Menginputkan Status</p>
-                                    <p className="text-left font-semibold text-sm text-gray-400 mb-10">Tempat, Negara</p>
+                                    <p className="text-left font-semibold text-sm text-gray-400 mb-2 mx-2">User Belum Menginputkan Gender</p>
+                                    <p className="text-left font-semibold text-sm text-gray-400 mb-2 mx-2">User Belum Menginputkan Status</p>
+                                    <p className="text-left font-semibold text-sm text-gray-400 mb-2 mx-2">Tempat, Negara</p>
                                 </div>
                             ) : (
                                 <div>
-                                    <p className="text-left font-semibold text-sm text-gray-400 mb-2">Jenis Kelamnin : {`${profile.DetailProfil.gender}`}</p>
-                                    <p className="text-left font-semibold text-sm text-gray-400 mb-2">Status Pelamar : {`${profile.DetailProfil.residentialStatus}`}</p>
-                                    <p className="text-left font-semibold text-sm text-gray-400 mb-2">Alamat         : {`${profile.DetailProfil.location}`} , {`${profile.DetailProfil.nationality}`}</p>
+                                    <p className="text-left font-semibold text-sm text-gray-400 mb-2 mx-2">Jenis Kelamnin : {`${profile.DetailProfil.gender}`}</p>
+                                    <p className="text-left font-semibold text-sm text-gray-400 mb-2 mx-2">Status Pelamar : {`${profile.DetailProfil.residentialStatus}`}</p>
+                                    <p className="text-left font-semibold text-sm text-gray-400 mb-2 mx-2">Alamat         : {`${profile.DetailProfil.location}`} , {`${profile.DetailProfil.nationality}`}</p>
                                 </div>
                             )}
-                            <p className="text-left font-semibold text-sm text-gray-400 mb-3">Skills Pelamar :</p>
+                            <p className="text-left font-semibold text-sm text-gray-400 mb-3 mx-2">Skills Pelamar :</p>
                             {profile.skills !== undefined ? (
 
                                 <div className="flex flex-wrap text-center">
