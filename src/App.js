@@ -1,4 +1,4 @@
-
+import Spinner from "./components/spinner"
 
 const App = () => {
 
@@ -15,7 +15,7 @@ const App = () => {
                             <img className="w-full max-w-full h-auto" alt="creative agency" src={`${process.env.PUBLIC_URL}/1.png`}></img>
                         </div>
                         {/* END CONTENT */}
-
+                        <Spinner />
                         {/* START TEXT */}
                         <div className="flex-shrink max-w-full px-4 w-full md:w-9/12 lg:w-1/2 self-center lg:pr-12">
                             <div className="text-center lg:text-left mt-6 lg:mt-0">
