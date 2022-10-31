@@ -83,17 +83,25 @@ export default function DetailUser() {
                                 <h6 className="text-blueGray-700 text-xl font-bold">Account Profile</h6>
                             </div>
                         </div>
-                        {profile !== undefined ? (
-                            <img className="w-40 h-40 rounded-full self-center" src={profile.img} alt="Rounded avatar" />
+                        {profile.img !== undefined ? (
+                            <img className="w-40 h-40 rounded-full self-center" src={profile.img}  />
                         ) : (
                             <img className="w-40 h-40 rounded-full self-center" src={`${process.env.PUBLIC_URL}/Logo Biru.png`} alt="Rounded avatar" />
                         )}
                         <h4 className="text-center font-bold mt-4">{profile.name.first_name} {profile.name.last_name}
-                            {profile.DetailProfil.gender !== "laki - laki" ? (
-                                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">She/Her</span>
+                            {profile.DetailProfil !== undefined ? (
+                                <div> {
+                                    profile.DetailProfil.gender !== "laki - laki" ? (
+                                        <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">She/Her</span>
+                                    ) : (
+                                        <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">He/Him</span>
+                                    )
+                                }
+                                </div>
                             ) : (
-                                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">He/Him</span>
+                                <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">undefined</span>
                             )}
+
                         </h4>
                         {profile.DetailProfil !== undefined ? (
                             <div>
@@ -104,9 +112,9 @@ export default function DetailUser() {
 
                         ) : (
                             <div>
-                                <p className="text-center font-semibold text-sm text-gray-400">Jember, Jawa Timur, Indonesia</p>
-                                <p className="text-center font-semibold text-sm text-gray-400">Mahasiswa</p>
-                                <p className="text-center font-semibold text-sm text-gray-800">Deskription</p>
+                                <p className="text-center font-semibold text-sm text-gray-400">Tidak Dicantumkan</p>
+                                <p className="text-center font-semibold text-sm text-gray-400">Tidak Dicantumkan</p>
+                                <p className="text-center font-semibold text-sm text-gray-800">Tidak Dicantumkan</p>
                             </div>
 
                         )}
