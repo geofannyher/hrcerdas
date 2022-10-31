@@ -5,7 +5,8 @@ const App = () => {
 
     return (
         <div className="container-Hero">
-            <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+          <Spinner>
+          <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
                 {/* HERO */}
                 <div className="section relative z-0 py-16 md:pt-32 md:pb-20 bg-gray-50">
                     <div className="container xl:max-w-6xl mx-auto px-4">
@@ -15,7 +16,7 @@ const App = () => {
                             <img className="w-full max-w-full h-auto" alt="creative agency" src={`${process.env.PUBLIC_URL}/1.png`}></img>
                         </div>
                         {/* END CONTENT */}
-                        <Spinner />
+                        
                         {/* START TEXT */}
                         <div className="flex-shrink max-w-full px-4 w-full md:w-9/12 lg:w-1/2 self-center lg:pr-12">
                             <div className="text-center lg:text-left mt-6 lg:mt-0">
@@ -132,6 +133,8 @@ const App = () => {
                 </div>
                 {/* END SERVICES */}
             </nav>
+          </Spinner>
+            
 
             
 
