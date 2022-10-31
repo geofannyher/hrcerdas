@@ -41,11 +41,11 @@ export default function HeaderStats() {
   const getLowonganHr = async () => {
     await axios
       .get(`${process.env.REACT_APP_BASE_URL}/lowonganpekerjaan/getlowonganhr`, {
-        headers: { Authorization: `Bearer ${token}` },
+        headers: { Authorization: `Bearer ${token.data}` },
       })
       .then((res) => {
         setLowongan(res.data.data);
-        console.log(res.data.data)
+        // console.log(res.data.data)
       })
       .catch((error) => {
         console.error(error);
@@ -55,11 +55,12 @@ export default function HeaderStats() {
   const getPelamarHr = async () => {
     await axios
       .get(`${process.env.REACT_APP_BASE_URL}/lowonganpekerjaan/allpelamarapllylowongan`, {
-        headers: { Authorization: `Bearer ${token}` },
+        headers: { Authorization: `Bearer ${token.data}` },
       })
       .then((res) => {
         setPelamar(res.data.data);
-        console.log(res.data.data)
+
+        // console.log(res.data.data)
       })
       .catch((error) => {
         console.error(error);

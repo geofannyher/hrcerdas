@@ -75,7 +75,7 @@ export default function CardFormPost() {
                     startdate: StartDate[0],
                     enddate: EndDate[0],
                 },
-                { headers: { Authorization: `Bearer ${token}` } }
+                { headers: { Authorization: `Bearer ${token.data}` } }
             )
             .then(res => {
                 if (res.status === 200) {
