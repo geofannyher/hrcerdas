@@ -285,7 +285,7 @@ export default function DetailUser() {
                                             workExperience.map(val => (
                                                 <div className="flex flex-wrap">
                                                     <div className=" xl:w-3/12 px-2">
-                                                        <img className="w-40 h-35 rounded" src="https://law.uii.ac.id/wp-content/uploads/2021/11/logo-bangkit-2022.png" alt="Default avatar" />
+                                                        <img className="w-40 h-35 rounded" src={`${process.env.PUBLIC_URL}/Logo Biru.png`} alt="Default avatar" />
                                                     </div>
                                                     <div className=" xl:w-9/12 px-2">
                                                         <p className="font-semibold text-xl">{val.company}</p>
@@ -306,7 +306,7 @@ export default function DetailUser() {
 
 
                     </div>
-                    <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-md rounded-lg bg-blueGray-100 border-0 mt-8">
+                    {/* <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-md rounded-lg bg-blueGray-100 border-0 mt-8">
                         <div className="rounded-t bg-white mb-0 px-6 py-6">
                             <div className="text-center flex justify-between">
                                 <h6 className="text-blueGray-700 text-xl font-bold">Lecense & Sertificate</h6>
@@ -338,7 +338,7 @@ export default function DetailUser() {
                         </div>
 
 
-                    </div>
+                    </div> */}
                     <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-md rounded-lg bg-blueGray-100 border-0 mt-8">
                         <div className="rounded-t bg-white mb-0 px-6 py-6">
                             <div className="text-center flex justify-between">
@@ -355,7 +355,7 @@ export default function DetailUser() {
                                             addEducation.map(val => (
                                                 <div className="flex flex-wrap">
                                                     <div className=" xl:w-3/12 px-2">
-                                                        <img className="w-40 h-35 rounded" src="https://law.uii.ac.id/wp-content/uploads/2021/11/logo-bangkit-2022.png" alt="Default avatar" />
+                                                        <img className="w-40 h-35 rounded" src={`${process.env.PUBLIC_URL}/Logo Biru.png`} alt="Default avatar" />
                                                     </div>
                                                     <div className=" xl:w-9/12 px-2">
                                                         <p className="font-semibold text-xl">{val.lembaga}</p>
@@ -393,7 +393,7 @@ export default function DetailUser() {
                                             addorganization.map(val => (
                                                 <div className="flex flex-wrap">
                                                     <div className=" xl:w-3/12 px-2">
-                                                        <img className="w-40 h-35 rounded" src="https://law.uii.ac.id/wp-content/uploads/2021/11/logo-bangkit-2022.png" alt="Default avatar" />
+                                                        <img className="w-40 h-35 rounded" src={`${process.env.PUBLIC_URL}/Logo Biru.png`} alt="Default avatar" />
                                                     </div>
                                                     <div className=" xl:w-9/12 px-2">
                                                         <p className="font-semibold text-xl">{val.organizationName}</p>
@@ -430,34 +430,37 @@ export default function DetailUser() {
                                             {skill.length > 0 ? (
                                                 skill.map(val => (
 
-                                                    <li className="mb-10 ml-6">
-                                                        <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                                                            <svg aria-hidden="true" className="w-3 h-3 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
-                                                        </span>
-                                                        <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">{val}</h3>
-                                                    </li>
-                                                ))
-                                            ) : (
-                                                <div className="text-center flex flex-auto seft-center">
-                                                    <p className="text-center flex flex-auto">No data</p>
-                                                </div>
-                                            )}
-                                        </ol>
+                                            < li className="mb-10 ml-6">
+                                            <span className="flex absolute -left-3 justify-center items-center w-6 h-6 bg-blue-200 rounded-full ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-briefcase-fill w-3 h-3 text-blue-600 dark:text-blue-400" viewBox="0 0 16 16">
+                                                    <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z" />
+                                                    <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z" />
+                                                </svg>
+                                            </span>
+                                            <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">{val}</h3>
+                                        </li>
+                                    ))
                                     ) : (
+                                    <div className="text-center flex flex-auto seft-center">
                                         <p className="text-center flex flex-auto">No data</p>
+                                    </div>
+                                            )}
+                                </ol>
+                                ) : (
+                                <p className="text-center flex flex-auto">No data</p>
                                     )}
 
 
 
-                                </div>
                             </div>
                         </div>
-
-
                     </div>
-                </div>
 
+
+                </div>
             </div>
+
+        </div>
         </>
     )
 }
