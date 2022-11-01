@@ -24,7 +24,7 @@ export default function PhotoProfileAnalytic() {
         await axios
         .get(`${process.env.REACT_APP_BASE_URL}/pelamar/getdetailpelamar/id/${id}`, {
             headers: {
-                Authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${token.data}`,
             },
         })
         .then((res) => {

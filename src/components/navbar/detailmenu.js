@@ -27,7 +27,7 @@ const Detailmenu = ({ open, onClose }) => {
         await axios
             .get(`${process.env.REACT_APP_BASE_URL}/hr/profile`, {
                 headers: {
-                    Authorization: `Bearer ${token}`,
+                    Authorization: `Bearer ${token.data}`,
                 },
             })
             .then((res) => {

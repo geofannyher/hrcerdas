@@ -61,7 +61,7 @@ export default function CardTableListPost() {
     const getLowonganHr = async () => {
         await axios
             .get(`${process.env.REACT_APP_BASE_URL}/lowonganpekerjaan/getlowonganhr`, {
-                headers: { Authorization: `Bearer ${token}` },
+                headers: { Authorization: `Bearer ${token.data}` },
             })
             .then((res) => {
                 setLowongan(res.data.data);
@@ -74,7 +74,7 @@ export default function CardTableListPost() {
     const getDeleteLowongan = async (id) => {
         await axios
             .delete(`${process.env.REACT_APP_BASE_URL}/lowonganpekerjaan/deletelowongan/id/${id}`, {
-                headers: { Authorization: `Bearer ${token}` },
+                headers: { Authorization: `Bearer ${token.data}` },
             })
             .then(() => {
                 setLowongan();

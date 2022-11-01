@@ -29,7 +29,7 @@ const CardDetailPost = () => {
     const getDetail = async () => {
         await axios
             .get(`${process.env.REACT_APP_BASE_URL}/lowonganpekerjaan/listpelamar/id/${param.id}`, {
-                headers: { Authorization: `Bearer ${token}` },
+                headers: { Authorization: `Bearer ${token.data}` },
             })
             .then((res) => {
                 if (res.status === 200) {
@@ -45,7 +45,7 @@ const CardDetailPost = () => {
     const getDetailProfile = async () => {
         await axios
             .get(`${process.env.REACT_APP_BASE_URL}/pelamar/getdetailpelamar/id/${detail.id_pelamar}`, {
-                headers: { Authorization: `Bearer ${token}` },
+                headers: { Authorization: `Bearer ${token.data}` },
             })
             .then((res) => {
                 if (res.status === 200) {

@@ -12,7 +12,7 @@ import HeaderStats from "../../components/HeaderStats.js/HeaderStasts";
 
 export default function Dashboard() {
     const navigate = useNavigate();
-    const [local, setLocal] = useState(null);
+    const [token, setToken] = useState(null);
     const [profile, setProfile] = useState({})
 
     useEffect(() => {
@@ -22,28 +22,39 @@ export default function Dashboard() {
         } else {
             const item = sessionStorage.getItem("data");
             if (item) {
-                setLocal(JSON.parse(item));
+                setToken(JSON.parse(item));
             }
         }
     }, []);
 
+    
+
+    // session timeout
+    const timeout = () => {
+        console.log("waktu jalan")
+        setTimeout(() => {
+            handleLogout()
+            console.log("waktu end")
+        }, token.expired)
+    }
+
+    // logout function
+    const handleLogout = () => {
+        sessionStorage.removeItem("data");
+        navigate("/login");
+    };
+
     useEffect(() => {
-        if (local !== null) {
-            getProfile(local);
-        }
-    }, [local]);
-
-
-
-    useEffect(() => {
-        if (local !== null) {
+        if (token !== null) {
             getProfile();
+            timeout()
         }
-    }, [local]);
+    }, [token]);
+
     const getProfile = async () => {
         await axios
             .get(`${process.env.REACT_APP_BASE_URL}/hr/profile`, {
-                headers: { Authorization: `Bearer ${local}` },
+                headers: { Authorization: `Bearer ${token.data}` },
             })
             .then(res => {
                 if (res.status === 200) {
@@ -62,7 +73,7 @@ export default function Dashboard() {
                 <div className="w-full px-4">
                     <HeaderStats />
                 </div>
-                
+
                 <div className="w-full mb-12 px-12 xl:w-12/12 mt-8 m-4 mx-5 items-center">
                     <CardTablePelamar />
                 </div>

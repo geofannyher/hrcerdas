@@ -31,7 +31,7 @@ const AllLowongan = () => {
     const getLowonganHr = async () => {
         await axios
             .get(`${process.env.REACT_APP_BASE_URL}/lowonganpekerjaan/allpelamarapllylowongan`, {
-                headers: { Authorization: `Bearer ${token}` },
+                headers: { Authorization: `Bearer ${token.data}` },
             })
             .then((res) => {
                 setLowongan(res.data.data);
