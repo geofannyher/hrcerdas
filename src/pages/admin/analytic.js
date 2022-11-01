@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Navigate, useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import BarChart from "../../components/Cards/Charts/Chartsentiment";
 import PieChart from "../../components/Cards/Charts/ChartTolerant";
 import Progressbar from "../../components/Cards/Charts/Progress_bar";
@@ -8,6 +8,7 @@ import Progressbar from "../../components/Cards/Charts/Progress_bar";
 
 
 export default function Analytic() {
+    const navigate = useNavigate();
     const [token, setToken] = useState(null);
     const [profile, setProfile] = useState({
         name: { first_name: "", last_name: "" },
@@ -29,9 +30,25 @@ export default function Analytic() {
         }
     }, []);
 
+     // session timeout
+     const timeout = () => {
+        console.log("waktu jalan")
+        setTimeout(() => {
+            handleLogout()
+            console.log("waktu end")
+        }, token.expired)
+    }
+
+    // logout function
+    const handleLogout = () => {
+        sessionStorage.removeItem("data");
+        navigate("/login");
+    };
+
     useEffect(() => {
         if (token !== null) {
             getProfile(token);
+            timeout()
         }
     }, [token]);
 
