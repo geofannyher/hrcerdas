@@ -81,7 +81,7 @@ export default function HeaderStats() {
 
                 <CardStats
                   statSubtitle="Total Job Applicant"
-                  statTitle="350,897"
+                  statTitle="10"
                   statArrow="up"
                   statPercent="3.48"
                   statPercentColor="text-emerald-500"
@@ -129,7 +129,7 @@ export default function HeaderStats() {
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats
                   statSubtitle="Total Applied Employees"
-                  statTitle="924"
+                  statTitle="0"
                   statArrow="down"
                   statPercent="1.10"
                   statPercentColor="text-orange-500"
@@ -144,7 +144,7 @@ export default function HeaderStats() {
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats
                   statSubtitle="Total Denied Employees"
-                  statTitle="49,65%"
+                  statTitle="0"
                   statArrow="up"
                   statPercent="12"
                   statPercentColor="text-emerald-500"
