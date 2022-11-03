@@ -8,6 +8,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [showAlert, handleAlert] = useState(false);
   const [alertMsg, setAlertMsg] = useState("");
+  const [tokenExpired, settokenExpired] = useState()
   // Navigation
   const navigate = useNavigate();
 
@@ -29,7 +30,8 @@ const Login = () => {
       })
       .then(res => {
         if (res.status === 200) {
-          sessionStorage.setItem("data", JSON.stringify(res.data.data));
+          sessionStorage.setItem("data", JSON.stringify(res.data));
+          settokenExpired(res.data.expired)
           navigate("/admin");
           console.log("success");
         } else {

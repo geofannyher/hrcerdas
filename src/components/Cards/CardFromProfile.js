@@ -48,7 +48,7 @@ export default function CardProfile() {
         await axios
             .get(`${process.env.REACT_APP_BASE_URL}/hr/profile`, {
                 headers: {
-                    Authorization: `Bearer ${token}`,
+                    Authorization: `Bearer ${token.data}`,
                 },
             })
             .then((res) => {
@@ -70,7 +70,7 @@ export default function CardProfile() {
             .put(
                 `${process.env.REACT_APP_BASE_URL}/detailperusahaan/basic`,
                 body,
-                { headers: { Authorization: `Bearer ${token}` } }
+                { headers: { Authorization: `Bearer ${token.data}` } }
             )
             .then(res => {
                 if (res.status === 200) {

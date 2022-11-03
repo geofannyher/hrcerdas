@@ -1,9 +1,74 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import CardStats from "../Cards/CardStats";
 
 // components
 
 export default function HeaderStats() {
+  const [token, setToken] = useState(null);
+  const [lowongan, setLowongan] = useState({
+
+
+  });
+  const [pelamar, setPelamar] = useState({})
+  // const [openModal, setOpenModal] = useState(false);
+  const navigate = useNavigate();
+
+  //  Get Login Data
+  useEffect(() => {
+    if (!sessionStorage.getItem("data")) {
+      navigate("/login");
+    } else {
+      const item = sessionStorage.getItem("data");
+      if (item) {
+        setToken(JSON.parse(item));
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (token !== null) {
+      getLowonganHr(token);
+    }
+  })
+  useEffect(() => {
+    if (token !== null) {
+      getPelamarHr(token);
+    }
+  })
+
+  const getLowonganHr = async () => {
+    await axios
+      .get(`${process.env.REACT_APP_BASE_URL}/lowonganpekerjaan/getlowonganhr`, {
+        headers: { Authorization: `Bearer ${token.data}` },
+      })
+      .then((res) => {
+        setLowongan(res.data.data);
+        // console.log(res.data.data)
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  const getPelamarHr = async () => {
+    await axios
+      .get(`${process.env.REACT_APP_BASE_URL}/lowonganpekerjaan/allpelamarapllylowongan`, {
+        headers: { Authorization: `Bearer ${token.data}` },
+      })
+      .then((res) => {
+        setPelamar(res.data.data);
+
+        // console.log(res.data.data)
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+
+  const val = [];
   return (
     <>
       {/* Header */}
@@ -13,6 +78,7 @@ export default function HeaderStats() {
             {/* Card stats */}
             <div className="flex flex-wrap">
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
+
                 <CardStats
                   statSubtitle="Total Job Applicant"
                   statTitle="350,897"
@@ -29,19 +95,36 @@ export default function HeaderStats() {
                 />
               </div>
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
-                <CardStats
-                  statSubtitle="Total Post Job"
-                  statTitle="2,356"
-                  statArrow="down"
-                  statPercent="3.48"
-                  statPercentColor="text-red-500"
-                  statDescripiron="Since last week"
-                  statIconName={<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
-                    <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z" />
-                    <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z" />
-                  </svg>}
-                  statIconColor="bg-orange-500"
-                />
+                {lowongan.length > 0 ? (
+                  <CardStats
+                    statSubtitle="Total Post Job"
+                    statTitle={lowongan.length}
+                    statArrow="down"
+                    statPercent="3.48"
+                    statPercentColor="text-red-500"
+                    statDescripiron="Since last week"
+                    statIconName={<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
+                      <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z" />
+                      <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z" />
+                    </svg>}
+                    statIconColor="bg-orange-500"
+                  />
+                ) : (
+                  <CardStats
+                    statSubtitle="Total Post Job"
+                    statTitle="0"
+                    statArrow="down"
+                    statPercent="3.48"
+                    statPercentColor="text-red-500"
+                    statDescripiron="Since last week"
+                    statIconName={<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 16">
+                      <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z" />
+                      <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z" />
+                    </svg>}
+                    statIconColor="bg-orange-500"
+                  />
+                )}
+
               </div>
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats

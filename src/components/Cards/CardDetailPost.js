@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { data } from "autoprefixer";
+import Dashboardload from "../spinner/dashboardload";
 
 const CardDetailPost = () => {
     const [token, setToken] = useState(null);
@@ -29,7 +29,7 @@ const CardDetailPost = () => {
     const getDetail = async () => {
         await axios
             .get(`${process.env.REACT_APP_BASE_URL}/lowonganpekerjaan/listpelamar/id/${param.id}`, {
-                headers: { Authorization: `Bearer ${token}` },
+                headers: { Authorization: `Bearer ${token.data}` },
             })
             .then((res) => {
                 if (res.status === 200) {
@@ -45,13 +45,13 @@ const CardDetailPost = () => {
     const getDetailProfile = async () => {
         await axios
             .get(`${process.env.REACT_APP_BASE_URL}/pelamar/getdetailpelamar/id/${detail.id_pelamar}`, {
-                headers: { Authorization: `Bearer ${token}` },
+                headers: { Authorization: `Bearer ${token.data}` },
             })
             .then((res) => {
                 if (res.status === 200) {
                     setDetailProfile(res.data.data);
                     console.log(setDetailProfile);
-                    
+
                 }
             })
             .catch((err) => {
@@ -98,7 +98,7 @@ const CardDetailPost = () => {
                                 <tbody>
                                     <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                                         <th scope="row" className="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap dark:text-white">
-                                        <img className="w-10 h-10 rounded-full" src={val.profile} alt="hanip" />
+                                            <img className="w-10 h-10 rounded-full" src={val.profile} alt="hanip" />
                                             <div className="pl-3">
                                                 <div className="text-base font-semibold"> {val.name} </div>
                                             </div>
@@ -114,7 +114,7 @@ const CardDetailPost = () => {
                                             <span className="bg-blue-100 text-blue-800 text-sm font-bold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">{val.score_utama}</span>
                                         </td>
                                         <td className="flex items-center py-4 px-6 space-x-3">
-                                            <a href={`/admin/listpost/detailPost/${val.id_pelamar}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+                                            <a href={`/admin/detail/${val.id_pelamar}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
                                                 <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z" />
                                                 <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z" />
                                             </svg></a>
@@ -127,7 +127,35 @@ const CardDetailPost = () => {
                                 </tbody>
                             ))
                         ) : (
-                            <p>No Data</p>
+                            <tr>
+                                    <td className="text-center">
+                                        --
+                                    </td>
+                                    <td className="text-center">
+                                        --
+                                    </td>
+                                    <td>
+
+                                        <div class="flex flex-auto mt-10 mb-10 justify-center">
+                                            <div role="status">
+                                                <svg class="inline mr-2 w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor" />
+                                                    <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill" />
+                                                </svg>
+                                                <p className='mt-5'>
+                                                    <span className='text-left font-medium'>Loading...</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td className="text-center">
+                                        --
+                                    </td>
+                                    <td className="text-center">
+                                        --
+                                    </td>
+
+                                </tr>
                         )}
                     </table>
                 </div>
