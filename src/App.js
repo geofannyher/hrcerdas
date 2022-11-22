@@ -5,7 +5,7 @@ const App = () => {
 
     return (
         <div className="container-Hero">
-
+         <Spinner />
           <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
                 {/* HERO */}
                 <div className="section relative z-0 py-16 md:pt-32 md:pb-20 bg-gray-50">

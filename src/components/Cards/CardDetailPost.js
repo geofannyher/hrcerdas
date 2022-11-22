@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import Dashboardload from "../spinner/dashboardload";
 
 const CardDetailPost = () => {
     const [token, setToken] = useState(null);
