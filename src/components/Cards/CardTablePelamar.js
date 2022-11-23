@@ -42,53 +42,7 @@ const AllLowongan = () => {
             });
     };
 
-    const useSortableData = (items, config = null) => {
-        const [sortConfig, setSortConfig] = React.useState(config);
-
-        const sortedItems = React.useMemo(() => {
-            let sortableItems = [...items];
-            if (sortConfig !== null) {
-                sortableItems.sort((a, b) => {
-                    if (a[sortConfig.key] < b[sortConfig.key]) {
-                        return sortConfig.direction === 'ascending' ? -1 : 1;
-                    }
-                    if (a[sortConfig.key] > b[sortConfig.key]) {
-                        return sortConfig.direction === 'ascending' ? 1 : -1;
-                    }
-                    return 0;
-                });
-            }
-            return sortableItems;
-        }, [items, sortConfig]);
-
-        const requestSort = (key) => {
-            let direction = 'ascending';
-            if (
-                sortConfig &&
-                sortConfig.key === key &&
-                sortConfig.direction === 'ascending'
-            ) {
-                direction = 'descending';
-            }
-            setSortConfig({ key, direction });
-        };
-
-        return { items: sortedItems, requestSort, sortConfig };
-    };
-
-    const ProductTable = (props) => {
-        const { items, requestSort, sortConfig } = useSortableData(lowongan);
-        const getClassNamesFor = (name) => {
-            if (!sortConfig) {
-                return;
-            }
-            return sortConfig.key === name ? sortConfig.direction : undefined;
-        };
-
-        const val = [];
-
-
-
+    
         return (
 
             <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-md rounded p-4">
@@ -199,5 +153,4 @@ const AllLowongan = () => {
             </div >
         );
     };
-};
 export default AllLowongan;
