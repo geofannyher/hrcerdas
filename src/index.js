@@ -23,6 +23,7 @@ import Analytic from "./pages/admin/analytic";
 import Chart from "./components/Cards/User/CardSentiment";
 import UserLayout from "./layouts";
 import Navbar from "./components/navbar";
+import Test from "./pages/admin/test";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -43,6 +44,7 @@ root.render(
         <Route element={<UserLayout />} >
           <Route path="/admin" element={<Admin />} />
           <Route path="/analitik" element={<Chart />} />
+          <Route path="/test" element={<Test />} />
           <Route path="/detail" element={<Detail />} />
           <Route path="/admin/listpost" element={<ListPost />} />
           <Route path="/admin/listpost/addPost" element={<AddPost />} />
