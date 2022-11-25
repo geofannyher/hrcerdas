@@ -58,9 +58,9 @@ export default function HeaderStats() {
         headers: { Authorization: `Bearer ${token.data}` },
       })
       .then((res) => {
-        setPelamar(res.data.data);
+        setPelamar(res.data.data.data);
 
-        // console.log(res.data.data)
+        console.log(res.data.data.data)
       })
       .catch((error) => {
         console.error(error);
@@ -78,10 +78,10 @@ export default function HeaderStats() {
             {/* Card stats */}
             <div className="flex flex-wrap">
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
-
+  
                 <CardStats
                   statSubtitle="Total Job Applicant"
-                  statTitle="350,897"
+                  statTitle="0"
                   statArrow="up"
                   statPercent="3.48"
                   statPercentColor="text-emerald-500"
@@ -129,7 +129,7 @@ export default function HeaderStats() {
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats
                   statSubtitle="Total Applied Employees"
-                  statTitle="924"
+                  statTitle="0"
                   statArrow="down"
                   statPercent="1.10"
                   statPercentColor="text-orange-500"
@@ -144,7 +144,7 @@ export default function HeaderStats() {
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats
                   statSubtitle="Total Denied Employees"
-                  statTitle="49,65%"
+                  statTitle="0"
                   statArrow="up"
                   statPercent="12"
                   statPercentColor="text-emerald-500"

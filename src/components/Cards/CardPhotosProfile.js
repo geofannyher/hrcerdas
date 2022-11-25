@@ -55,7 +55,11 @@ export default function PhotoProfile() {
                         <h6 className="text-blueGray-700 text-xl font-bold">Account Profile</h6>
                     </div>
                 </div>
-                <img className="w-40 h-40 rounded-full self-center" src="https://cdn1-production-images-kly.akamaized.net/Sn5EjcEhFI-jWocCljrP7CZRwyw=/1200x900/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/1439641/original/042027300_1482131661-reddit.jpg" alt="Rounded avatar" />
+                {profile.img !== undefined ? (
+                            <img className="w-40 h-40 rounded-full self-center" src={profile.img} />
+                        ) : (
+                            <img className="w-40 h-40 rounded-full self-center" src={`${process.env.PUBLIC_URL}/Logo Biru.png`} alt="Rounded avatar" />
+                        )}
                 <h4 className="text-center font-bold mt-4">{`${profile.name.first_name}  ${profile.name.last_name}`}</h4>
                 {profile.DetailBasicPerusahaan !== undefined ? (
                     <div>

@@ -1,24 +1,24 @@
 import { useState } from "react";
 import BarChart from "../Charts/Chartsentiment";
-import { UserData } from "../Charts/Data";
+// import { UserData } from "../Charts/Data";
 
 
 function Chart() {
-  const [userData, setUserData] = useState({
-    labels: UserData.map((data) => data.year),
-    datasets: [
-      {
-        label: "Sentiment",
-        data: UserData.map((data) => data.userGain),
-        backgroundColor: [
-          "#A52A2A",
-          "#008000",
-        ],
-        borderColor: "white",
-        borderWidth: 2,
-      },
-    ],
-  });
+  // const [userData, setUserData] = useState({
+  //   labels: UserData.map((data) => data.year),
+  //   datasets: [
+  //     {
+  //       label: "Sentiment",
+  //       data: profile.Score.sentimen_positif,
+  //       backgroundColor: [
+  //         "#A52A2A",
+  //         "#008000",
+  //       ],
+  //       borderColor: "white",
+  //       borderWidth: 2,
+  //     },
+  //   ],
+  // });
 
   // IF YOU SEE THIS COMMENT: I HAVE GOOD EYESIGHT
 
