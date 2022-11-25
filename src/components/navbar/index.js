@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Detailmenu from "./detailmenu";
 import Notification from "./notification";
@@ -6,6 +6,47 @@ const Navbar = () => {
   const navigate = useNavigate()
   const [open, setOpen] = useState(false);
   const [notification, setNotification] = useState(false);
+
+  const [profile, setProfile] = useState({
+    name: { first_name: "", last_nama: "" },
+    DetailBasicPerusahaan: {},
+    DetailProfile: {},
+});
+
+const [token, setToken] = useState(null);
+
+useEffect(() => {
+    if (!sessionStorage.getItem("data")) {
+        navigate("/login");
+    } else {
+        const item = sessionStorage.getItem("data");
+        if (item) {
+            setToken(JSON.parse(item));
+        }
+    }
+}, []);
+
+useEffect(() => {
+    if (token !== null) {
+        getProfile(token);
+    }
+}, [token]);
+
+const getProfile = async (token) => {
+    await axios
+        .get(`${process.env.REACT_APP_BASE_URL}/hr/profile`, {
+            headers: {
+                Authorization: `Bearer ${token.data}`,
+            },
+        })
+        .then((res) => {
+            setProfile(res.data.data);
+            console.log(res.data.data)
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+}
   return (
     <>
       <header>
@@ -58,11 +99,21 @@ const Navbar = () => {
 
                   {/* button avatar */}
                   <button onClick={() => setOpen(true)}>
-                    <img
+                  {profile.img !== undefined ? (
+                                <div className="flex flex-auto self-center mx-4">
+                                    <img className="w-10 h-10 rounded-full self-center" src={`${profile.DetailBasicPerusahaa.fotoperusahaan}`} alt="Rounded avatar" />
+                                </div>
+                            ) : (
+                                <div className="flex flex-auto self-center">
+
+                                    <img className="w-10 h-10 rounded-full self-center " src={`${process.env.PUBLIC_URL}/Logo Biru.png`} alt="Rounded avatar" />
+                                </div>
+                            )}
+                    {/* <img
                       className="w-10 h-10 rounded-full"
                       src="https://cdna.artstation.com/p/assets/images/images/045/610/778/large/seonghwan-jang-jy-flcl38-02.jpg?1643130229"
                       alt="Rounded avatar"
-                    />
+                    /> */}
                   </button>
                   {
                     open ? (
