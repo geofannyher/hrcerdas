@@ -2,10 +2,66 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Detailmenu from "./detailmenu";
 import Notification from "./notification";
+
 const Navbar = () => {
   const navigate = useNavigate()
   const [open, setOpen] = useState(false);
   const [notification, setNotification] = useState(false);
+  const [token, setToken] = useState(null);
+  const [profile, setProfile] = useState({})
+
+    useEffect(() => {
+        if (!sessionStorage.getItem("data")) {
+            navigate("/login");
+
+        } else {
+            const item = sessionStorage.getItem("data");
+            if (item) {
+                setToken(JSON.parse(item));
+            }
+        }
+    }, []);
+
+    
+
+    // session timeout
+    const timeout = () => {
+        console.log("waktu jalan")
+        setTimeout(() => {
+            handleLogout()
+            console.log("waktu end")
+        }, token.expired)
+    }
+
+    // logout function
+    const handleLogout = () => {
+        sessionStorage.removeItem("data");
+        navigate("/login");
+    };
+
+    useEffect(() => {
+        if (token !== null) {
+            getProfile();
+            timeout()
+        }
+    }, [token]);
+
+    const getProfile = async () => {
+        await axios
+            .get(`${process.env.REACT_APP_BASE_URL}/hr/profile`, {
+                headers: { Authorization: `Bearer ${token.data}` },
+            })
+            .then(res => {
+                if (res.status === 200) {
+                    setProfile(res.data.data);
+                }
+            })
+            .catch(err => {
+                console.log(err.response.data);
+            });
+    };
+
+
   return (
     <>
       <header>
@@ -58,11 +114,11 @@ const Navbar = () => {
 
                   {/* button avatar */}
                   <button onClick={() => setOpen(true)}>
-                    <img
-                      className="w-10 h-10 rounded-full"
-                      src="https://cdna.artstation.com/p/assets/images/images/045/610/778/large/seonghwan-jang-jy-flcl38-02.jpg?1643130229"
-                      alt="Rounded avatar"
-                    />
+                  {profile.img !== undefined ? (
+                            <img className="w-10 h-10 rounded-full self-center" src={profile.img} />
+                        ) : (
+                            <img className="w-10 h-10 rounded-full self-center" src={`${process.env.PUBLIC_URL}/Logo Biru.png`} alt="Rounded avatar" />
+                        )}
                   </button>
                   {
                     open ? (
