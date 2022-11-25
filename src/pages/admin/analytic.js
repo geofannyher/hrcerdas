@@ -76,7 +76,7 @@ export default function Analytic() {
     // console.log(c)
     const d = 100 - a
     const e = d - 10
-    const f = a + 20
+    const f = a + 10
     // console.log(typeof a)
    
 
