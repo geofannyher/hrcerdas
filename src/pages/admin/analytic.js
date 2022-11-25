@@ -75,6 +75,8 @@ export default function Analytic() {
     // const c = Math.floor(Math.random() * 100);
     // console.log(c)
     const d = 100 - a
+    const e = b - 10
+    const f = a + 20
     // console.log(typeof a)
    
 
@@ -106,7 +108,7 @@ export default function Analytic() {
         ],
         datasets: [{
             label: 'My First Dataset',
-            data: [a, b],
+            data: [e,f],
             backgroundColor: [
                 '#fb7185',
                 '#0284c7',
