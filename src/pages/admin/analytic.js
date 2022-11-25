@@ -75,7 +75,7 @@ export default function Analytic() {
     // const c = Math.floor(Math.random() * 100);
     // console.log(c)
     const d = 100 - a
-    const e = b - 10
+    const e = d - 10
     const f = a + 20
     // console.log(typeof a)
    
