@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { registerData } from "../../../services/supabase/login.services";
 
 function Register() {
   const [email, setEmail] = useState("");
@@ -16,43 +17,21 @@ function Register() {
 
   // Security
   useEffect(() => {
-    if (sessionStorage.getItem("data")) {
+    if (sessionStorage.getItem("user")) {
       navigate("/admin");
     }
   }, []);
 
-  const handleSubmit = async () => {
-    // console.log({firstName, lastName, username,email,password,confirmPassword,phone})
-    return axios
-      .post(`${process.env.REACT_APP_BASE_URL}/hr/register`, {
-        first_name: firstName,
-        last_name: lastName,
-        username: username,
-        email: email,
-        password: password,
-        confPassword: confirmPassword,
-        noHp: phone,
-        namaPerusahaan: namaPerusahaan,
-      })
-      .then((response) => {
-        if (response.status === 200) {
-          // sessionStorage.setItem("data", JSON.stringify(res.data.data));
-          navigate("/login");
-          console.log("success create");
-        } else {
-          console.log("something wrong");
-        }
-      })
-      .catch((err) => {
-        if (err.response.status === 400) {
-          console.log(err.response.data);
-        } else {
-          console.log(err.response.data);
-        }
-        // console.log(err.data.data)
-        // handleAlert(true);
-        // setAlertMsg(err.response.data.message);
-      });
+  const handleSubmit = async (e) => {
+    const res = await registerData({
+      email: email,
+      password: password,
+    });
+
+    if (res?.status == 201) {
+    } else {
+      alert("error");
+    }
   };
   return (
     <>
@@ -83,7 +62,7 @@ function Register() {
                 }}
               >
                 <div className="grid gap-3 mb-4 md:grid-cols-2 ">
-                  <div>
+                  {/* <div>
                     <label
                       for="firstName"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -154,7 +133,7 @@ function Register() {
                       onChange={(e) => setPerusahaan(e.target.value)}
                       required=""
                     />
-                  </div>
+                  </div> */}
                   <div>
                     <label
                       for="email"
@@ -191,7 +170,7 @@ function Register() {
                       required=""
                     />
                   </div>
-                  <div>
+                  {/* <div>
                     <label
                       for="confpassword"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -226,7 +205,7 @@ function Register() {
                       onChange={(e) => setPhone(e.target.value)}
                       required=""
                     />
-                  </div>
+                  </div> */}
                   <div className="flex items-start">
                     <div className="flex items-center h-5">
                       <input
@@ -262,9 +241,7 @@ function Register() {
                 <p className="text-sm text-center font-light text-gray-500 dark:text-gray-400">
                   Already have an account?{" "}
                   <button
-                    onClick={() => {
-                      navigate("/login");
-                    }}
+                    onClick={() => {}}
                     className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                   >
                     Login here
