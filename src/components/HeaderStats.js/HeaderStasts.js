@@ -28,7 +28,7 @@ export default function HeaderStats() {
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats
                   statSubtitle="Total Job Applicant"
-                  statTitle="0"
+                  statTitle={lowongan.length}
                   statArrow="up"
                   statPercent="3.48"
                   statPercentColor="text-emerald-500"
@@ -57,8 +57,7 @@ export default function HeaderStats() {
                 {lowongan.length > 0 ? (
                   <CardStats
                     statSubtitle="Total Post Job"
-                    // statTitle={lowongan.length}
-                    statTitle={lowongan.length}
+                    statTitle="0"
                     statArrow="down"
                     statPercent="3.48"
                     statPercentColor="text-red-500"
