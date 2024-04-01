@@ -88,7 +88,7 @@ const AllLowongan = () => {
 
                       <div className="pl-3">
                         <div className="text-base font-semibold">
-                          {tes.nama}
+                          {tes.first_name} {tes.last_name}
                         </div>
                         <div className="font-normal text-gray-500">
                           {tes.status}
